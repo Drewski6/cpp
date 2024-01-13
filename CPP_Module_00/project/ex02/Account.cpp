@@ -6,10 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 14:10:31 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/13 16:32:18 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/01/13 17:01:36 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ctime>
 #include <iostream>
 
 #include "Account.hpp"
@@ -24,6 +25,8 @@ Account::Account(int initial_deposit) {
   // set instance variables
   _amount = initial_deposit;
   _accountIndex = _nbAccounts;
+  _nbDeposits = 0;
+  _nbWithdrawals = 0;
 
   // increment class-wide attributes
   _totalAmount += _amount;
@@ -124,7 +127,22 @@ void Account::displayStatus(void) const {
 };
 
 // Private Methods
+// [19920104_091532] index:7;amount:8942;closed
 void Account::_displayTimestamp(void) {
-  std::cout << "[timestamp_place_holder] ";
+  // Declare variables
+  std::time_t raw_time; // time_t struct that contains the raw time info.
+  std::tm *local_time =
+      NULL; // pointer to tm struct that contains time info broken up into
+            // time componenets (seconds, minutes, hours, days, etc).
+
+  // Get the current time
+  std::time(&raw_time);
+  local_time = std::localtime(&raw_time);
+
+  // Convert to human readable format
+  char str_time[80];
+  std::strftime(str_time, sizeof(str_time), "%Y%m%d_%H%M%S", local_time);
+
+  std::cout << "[" << str_time << "] ";
   return;
 };
