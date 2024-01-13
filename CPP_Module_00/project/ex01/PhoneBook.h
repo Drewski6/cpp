@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:19:16 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/12 15:49:17 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/01/13 13:12:59 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 class PhoneBook {
 private:
-  int num_contacts;
-  Contact contact_list[8];
+  int _num_contacts;
+  Contact _contact_list[8];
 
   // Private Methods
   int get_contact_index(int num_contacts_displayed);

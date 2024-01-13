@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:18:26 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/13 10:03:01 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/01/13 13:09:33 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 class Contact {
 private:
-  bool saved_contact;
-  std::string first_name;
-  std::string last_name;
-  std::string nickname;
-  std::string phone_number;
-  std::string darkest_secret;
+  bool _saved_contact;
+  std::string _first_name;
+  std::string _last_name;
+  std::string _nickname;
+  std::string _phone_number;
+  std::string _darkest_secret;
 
 public:
   // CONSTRUCTOR
