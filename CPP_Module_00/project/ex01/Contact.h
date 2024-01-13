@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:18:26 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/12 15:37:13 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/01/13 10:03:01 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 
   // Public Methods
   void display_contact_abrv(int index);
-  void display_contact_full(int index);
+  void display_contact_full(void);
 
   // GETTERS
   bool get_saved_contact();

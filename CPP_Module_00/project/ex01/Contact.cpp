@@ -6,12 +6,13 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:19:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/12 15:37:28 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/01/13 10:07:37 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.h"
 
+#include <iomanip>
 #include <iostream>
 #include <string>
 
@@ -22,20 +23,33 @@ Contact::Contact(bool saved_contact_val, std::string first_name_val,
     : saved_contact(saved_contact_val), first_name(first_name_val),
       last_name(last_name_val), nickname(nickname_val),
       phone_number(phone_number_val), darkest_secret(darkest_secret_val){};
+
 // Destructor
 Contact::~Contact(){};
 
 // Public Member Functions (Public Methods)
 void Contact::display_contact_abrv(int index) {
-  std::cout << (index + 1) << ". |" << first_name << "|" << last_name << "|"
-            << nickname << "|" << phone_number << "|" << darkest_secret << "|"
-            << std::endl;
+  std::cout << std::setw(10) << (index + 1) << "|";
+  if (first_name.length() > 10)
+    std::cout << first_name.substr(0, 9) << ".|";
+  else
+    std::cout << std::setw(10) << first_name << "|";
+  if (last_name.length() > 10)
+    std::cout << last_name.substr(0, 9) << ".|";
+  else
+    std::cout << std::setw(10) << last_name << "|";
+  if (nickname.length() > 10)
+    std::cout << nickname.substr(0, 9) << "." << std::endl;
+  else
+    std::cout << std::setw(10) << nickname << std::endl;
 }
 
-void Contact::display_contact_full(int index) {
-  std::cout << (index + 1) << ". |" << first_name << "|" << last_name << "|"
-            << nickname << "|" << phone_number << "|" << darkest_secret << "|"
-            << std::endl;
+void Contact::display_contact_full(void) {
+  std::cout << "First Name    : " << first_name << std::endl;
+  std::cout << "Last Name     : " << last_name << std::endl;
+  std::cout << "Nickname      : " << nickname << std::endl;
+  std::cout << "Phone Number  : " << phone_number << std::endl;
+  std::cout << "Darkest Secret: " << darkest_secret << std::endl;
 }
 // GETTERS
 bool Contact::get_saved_contact() { return saved_contact; };

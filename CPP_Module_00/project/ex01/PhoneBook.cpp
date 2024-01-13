@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:19:37 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/12 15:54:28 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/01/13 10:03:32 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,9 @@ void PhoneBook::search_contact() {
   int num_contacts_displayed = 0;
 
   num_contacts_displayed = display_saved_contacts();
-  std::cout << "num_contacts_displayed: " << num_contacts_displayed
-            << std::endl;
   if (num_contacts_displayed != 0) {
     index = get_contact_index(num_contacts_displayed);
-    contact_list[index].display_contact_full(index);
+    contact_list[index].display_contact_full();
   }
 }
 
