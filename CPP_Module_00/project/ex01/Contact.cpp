@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:19:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/13 10:07:37 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/01/13 12:46:30 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Contact::Contact(bool saved_contact_val, std::string first_name_val,
 // Destructor
 Contact::~Contact(){};
 
-// Public Member Functions (Public Methods)
+// Public Methods
 void Contact::display_contact_abrv(int index) {
   std::cout << std::setw(10) << (index + 1) << "|";
   if (first_name.length() > 10)
@@ -79,4 +79,4 @@ void Contact::set_saved_contact(bool saved_contact_val) {
   saved_contact = saved_contact_val;
 }
 
-// Private Member Functions (Private Methods)
+// Private Methods
