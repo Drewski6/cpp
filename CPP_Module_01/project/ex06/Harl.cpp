@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 17:00:35 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/19 20:55:07 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/01/19 20:59:58 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Harl::~Harl(){};
 // Public Methods
 void Harl::complain(std::string level) {
   fPtr ptrs[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-  std::string levels[4] = {"debug", "info", "warning", "error"};
+  std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
   int i = 0;
 
   while (i < 4) {
