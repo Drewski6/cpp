@@ -6,14 +6,14 @@
 #    By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 22:01:03 by dpentlan          #+#    #+#              #
-#    Updated: 2024/01/19 16:59:56 by dpentlan         ###   ########.fr        #
+#    Updated: 2024/01/25 16:40:14 by dpentlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = harl
 
 ### SETTINGS ###
-CXX := g++
+CXX := c++
 SRC_DIR := 
 OBJ_DIR := 
 H_DIR := .

@@ -6,14 +6,14 @@
 #    By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 22:01:03 by dpentlan          #+#    #+#              #
-#    Updated: 2024/01/14 18:56:24 by dpentlan         ###   ########.fr        #
+#    Updated: 2024/01/25 16:39:49 by dpentlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombie
 
 ### SETTINGS ###
-CXX := g++
+CXX := c++
 SRC_DIR := 
 OBJ_DIR := 
 H_DIR := .

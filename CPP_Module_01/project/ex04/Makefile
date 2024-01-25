@@ -6,14 +6,14 @@
 #    By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 22:01:03 by dpentlan          #+#    #+#              #
-#    Updated: 2024/01/19 15:22:05 by dpentlan         ###   ########.fr        #
+#    Updated: 2024/01/25 16:40:10 by dpentlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = sed_is_for_losers
 
 ### SETTINGS ###
-CXX := g++
+CXX := c++
 SRC_DIR := 
 OBJ_DIR := 
 H_DIR := .
