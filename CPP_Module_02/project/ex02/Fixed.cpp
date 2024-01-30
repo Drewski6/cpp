@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:14:52 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/27 19:18:03 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/01/30 21:12:43 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Fixed.h"
@@ -42,7 +42,7 @@ Fixed::~Fixed(void){
     // std::cout << "Destructor Called" << std::endl;
 };
 
-// Overloaded Operators
+// Assignment Operator
 Fixed &Fixed::operator=(Fixed const &rhs) {
   // std::cout << "Copy assignment operator called" << std::endl;
   if (this == &rhs)
@@ -51,6 +51,100 @@ Fixed &Fixed::operator=(Fixed const &rhs) {
   return (*this);
 };
 
+// Comparison Operators
+bool Fixed::operator<(Fixed const &rhs) const {
+  return (_fixedNum < rhs._fixedNum);
+};
+
+bool Fixed::operator>(Fixed const &rhs) const {
+  return (_fixedNum > rhs._fixedNum);
+};
+
+bool Fixed::operator<=(Fixed const &rhs) const {
+  return (_fixedNum <= rhs._fixedNum);
+};
+
+bool Fixed::operator>=(Fixed const &rhs) const {
+  return (_fixedNum >= rhs._fixedNum);
+};
+
+bool Fixed::operator==(Fixed const &rhs) const {
+  return (_fixedNum == rhs._fixedNum);
+};
+
+bool Fixed::operator!=(Fixed const &rhs) const {
+  return (_fixedNum != rhs._fixedNum);
+};
+
+// Arrithmetic Operators
+Fixed Fixed::operator+(Fixed const &rhs) {
+  return Fixed(this->toFloat() + rhs.toFloat());
+};
+
+Fixed Fixed::operator-(Fixed const &rhs) {
+  return Fixed(this->toFloat() - rhs.toFloat());
+};
+
+Fixed Fixed::operator*(Fixed const &rhs) {
+  return Fixed(this->toFloat() * rhs.toFloat());
+};
+
+Fixed Fixed::operator/(Fixed const &rhs) {
+  return Fixed(this->toFloat() / rhs.toFloat());
+};
+// Increment/Decrement Operators
+Fixed &Fixed::operator++(void) {
+  ++_fixedNum;
+  return *this;
+};
+
+Fixed &Fixed::operator--(void) {
+  --_fixedNum;
+  return *this;
+};
+
+Fixed Fixed::operator++(int) {
+  Fixed temp(*this);
+  ++(*this);
+  return (temp);
+};
+
+Fixed Fixed::operator--(int) {
+  Fixed temp(*this);
+  --(*this);
+  return (temp);
+};
+
+// Static Functions
+Fixed &Fixed::min(Fixed &first, Fixed &second) {
+  if (first.getRawBits() > second.getRawBits())
+    return second;
+  else
+    return first;
+};
+
+Fixed &Fixed::max(Fixed &first, Fixed &second) {
+  if (first.getRawBits() > second.getRawBits())
+    return first;
+  else
+    return second;
+};
+
+const Fixed &Fixed::min(const Fixed &first, const Fixed &second) {
+  if (first.getRawBits() > second.getRawBits())
+    return second;
+  else
+    return first;
+};
+
+const Fixed &Fixed::max(const Fixed &first, const Fixed &second) {
+  if (first.getRawBits() > second.getRawBits())
+    return first;
+  else
+    return second;
+};
+
+// Stream Insertion Operator
 std::ostream &operator<<(std::ostream &os, Fixed const &f) {
   os << f.toFloat();
   return os;
