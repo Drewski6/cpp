@@ -6,12 +6,12 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 19:54:45 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/31 20:12:30 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:27:39 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __POINT_H__
-#define __POINT_H__
+#ifndef POINT_H
+#define POINT_H
 
 #include "Fixed.h"
 
@@ -38,4 +38,4 @@ private:
 
 std::ostream &operator<<(std::ostream &os, Point const &p);
 
-#endif // __POINT_H__ //
+#endif // POINT_H //

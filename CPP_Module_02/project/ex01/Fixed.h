@@ -6,12 +6,12 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:14:42 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/27 13:15:18 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:26:46 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FIXED_H__
-#define __FIXED_H__
+#ifndef FIXED_H
+#define FIXED_H
 
 #include <cmath>
 #include <iostream>
@@ -43,4 +43,4 @@ private:
 
 std::ostream &operator<<(std::ostream &os, Fixed const &f);
 
-#endif // __FIXED_H__
+#endif // FIXED_H //

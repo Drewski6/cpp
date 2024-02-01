@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.h                                            :+:      :+:    :+:   */
+/*   ScavTrap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 18:14:42 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 11:26:29 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/01 11:13:57 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/01 11:24:44 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-#define FIXED_H
+#ifndef SCAVTRAP_H
+#define SCAVTRAP_H
 
-#include <iostream>
+#include "ClapTrap.h"
 
-class Fixed {
+class ScavTrap : public ClapTrap {
 public:
   // Constructors , Copy Constructor, Destructor
-  Fixed(void);
-  Fixed(Fixed const &source);
-  ~Fixed(void);
+  ScavTrap(void);
+
+  ScavTrap(ScavTrap const &source);
+  ~ScavTrap(void);
 
   // Overloaded Operators
-  Fixed &operator=(Fixed const &rhs);
-
-  // Getters
-  int getRawBits(void) const;
-  void setRawBits(int const raw);
+  ScavTrap &operator=(ScavTrap const &rhs);
 
 private:
-  int _fixed_num;
-  static const int _bin_pnt = 8;
 };
 
-#endif // FIXED_H //
+#endif // SCAVTRAP_H //
