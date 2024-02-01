@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 10:41:20 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:57:47 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 #include <iostream>
 
 int main() {
+  {
+    std::cout << "Testing Copy Constructor" << std::endl;
+    ClapTrap test1("ImATest");
+    ClapTrap test2 = test1;
+    test1.printStatus();
+    test2.printStatus();
+  }
+  std::cout << std::endl;
   // Start
   ClapTrap b1("Bruno");
   ClapTrap h1("Hans");

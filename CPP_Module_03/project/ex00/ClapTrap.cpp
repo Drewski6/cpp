@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:37 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 10:47:06 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:54:51 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,15 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _atk(0) {
   std::cout << "Constructor called for new ClapTrap " << _name << std::endl;
 };
 
-ClapTrap::ClapTrap(ClapTrap const &source) { *this = source; };
+ClapTrap::ClapTrap(ClapTrap const &source) {
+  this->_name = source._name;
+  this->_hp = source._hp;
+  this->_ep = source._ep;
+  this->_atk = source._atk;
+  std::cout << "Copy Constructor called for new ClapTrap " << _name
+            << std::endl;
+};
+
 ClapTrap::~ClapTrap(void) {
   std::cout << "Destructor called for ClapTrap " << _name << std::endl;
 };
