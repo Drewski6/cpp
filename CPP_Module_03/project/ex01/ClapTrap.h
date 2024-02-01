@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:13 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 11:25:06 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:47:45 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,13 @@ public:
   void beRepaired(unsigned int amount);
   void printStatus(void);
 
-private:
+protected:
   std::string _name;
   int _hp;
   int _ep;
   int _atk;
 
+private:
   // Private Methods
   bool _useEnergy(int amount);
   bool _energyCheck(int amount);

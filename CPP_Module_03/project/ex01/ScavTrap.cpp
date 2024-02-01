@@ -6,15 +6,21 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:14:06 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 11:20:03 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:51:47 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ScavTrap.h"
+#include "ClapTrap.h"
 
 // Constructors , Copy Constructor, Destructor
-ScavTrap::ScavTrap(void){};
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+  std::cout << "Constructor called for new ScavTrap " << _name << std::endl;
+};
 
-ScavTrap::ScavTrap(ScavTrap const &source) { *this = source; };
+ScavTrap::ScavTrap(ScavTrap const &source) : ClapTrap(source) {
+  std::cout << "Copy Constructor called for new ScavTrap " << _name
+            << std::endl;
+};
 ScavTrap::~ScavTrap(void){};
 
 // Overloaded Operators

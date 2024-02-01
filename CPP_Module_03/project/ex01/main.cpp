@@ -6,14 +6,17 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 11:12:42 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:48:49 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
-#include <iostream>
+#include "ScavTrap.h"
 
 int main() {
   //
+  ScavTrap st("Barney");
+
+  ScavTrap anotherST = st;
+
   return (0);
 }
