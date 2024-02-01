@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:37 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 13:58:23 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:16:49 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void ClapTrap::printStatus(void) {
             << std::endl;
 }
 
-// Private Methods
+// Protected Methods
 bool ClapTrap::_useEnergy(int amount) {
   if (!_healthCheck(amount))
     return (false);

@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:37 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 13:54:51 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:17:28 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ClapTrap::~ClapTrap(void) {
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
   if (this == &rhs)
     return (*this);
-  // code
+  // Additional code here if you need a deep copy.
   return (*this);
 };
 
@@ -69,7 +69,7 @@ void ClapTrap::printStatus(void) {
             << std::endl;
 }
 
-// Private Methods
+// Protected Methods
 bool ClapTrap::_useEnergy(int amount) {
   if (!_healthCheck(amount))
     return (false);

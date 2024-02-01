@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:14:06 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 13:51:47 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:13:16 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ScavTrap.h"
@@ -21,7 +21,9 @@ ScavTrap::ScavTrap(ScavTrap const &source) : ClapTrap(source) {
   std::cout << "Copy Constructor called for new ScavTrap " << _name
             << std::endl;
 };
-ScavTrap::~ScavTrap(void){};
+ScavTrap::~ScavTrap(void) {
+  std::cout << "Destructor called for ScavTrap " << _name << std::endl;
+};
 
 // Overloaded Operators
 ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {

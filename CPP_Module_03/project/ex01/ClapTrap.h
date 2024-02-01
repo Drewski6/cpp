@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:13 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 13:47:45 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:16:35 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ protected:
   int _ep;
   int _atk;
 
-private:
-  // Private Methods
+  // Protected Methods
   bool _useEnergy(int amount);
   bool _energyCheck(int amount);
   bool _healthCheck(int amount);
