@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:31:00 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/31 21:49:57 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:42:59 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int main(void) {
 
   // Additional tests as requested in the subject.
   // Tests on triangle:
+  /*
   // 5 | *
   // 4 | |\
   // 3 | | \
@@ -43,6 +44,7 @@ int main(void) {
   // 1 | |   \
   // 0 | *----*
   //     012345
+  */
   {
     std::cout << "Tests:" << std::endl;
 
