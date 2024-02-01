@@ -1,5 +1,6 @@
-# Objects
+# Objects and Prebuilt Binary
 */*/*/*.o
+*/*/*/unnamed_project
 # module 00
 */*/*/megaphone
 */*/*/phonebook
