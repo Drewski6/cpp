@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:14:06 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/02 10:09:23 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:15:25 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ScavTrap.h"
@@ -39,8 +39,7 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {
 
 // Public Methods
 void ScavTrap::guardGate() {
-  std::cout << "ScavTrap " << _name << " is now in Gate keeper mode."
-            << std::endl;
+  std::cout << "ScavTrap " << _name << " is in Gate keeper mode." << std::endl;
   _gateKeeperMode = true;
   return;
 };
