@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:37 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 14:16:49 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/03 08:13:24 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,16 @@ void ClapTrap::attack(const std::string &target) {
 
 void ClapTrap::takeDamage(unsigned int amount) {
   _hp -= amount;
-  std::cout << "ClapTrap " << _name << " takes " << amount
-            << " points of damage!" << std::endl;
+  std::cout << _name << " takes " << amount << " points of damage!"
+            << std::endl;
 };
 
 void ClapTrap::beRepaired(unsigned int amount) {
   if (!_useEnergy(1))
     return;
   _hp += amount;
-  std::cout << "ClapTrap " << _name << " heals itself for " << amount
-            << " points of health!" << std::endl;
+  std::cout << _name << " heals itself for " << amount << " points of health!"
+            << std::endl;
 };
 
 void ClapTrap::printStatus(void) {
@@ -69,7 +69,7 @@ void ClapTrap::printStatus(void) {
             << std::endl;
 }
 
-// Protected Methods
+// Private Methods
 bool ClapTrap::_useEnergy(int amount) {
   if (!_healthCheck(amount))
     return (false);

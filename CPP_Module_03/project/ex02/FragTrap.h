@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:13:57 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/02 19:31:20 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/03 08:31:18 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ public:
   // Public Methods
   void highFivesGuys(void);
   void attack(const std::string &target);
-  void takeDamage(unsigned int amount);
-  void beRepaired(unsigned int amount);
   void printStatus(void);
 
 private:

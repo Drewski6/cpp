@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 07:43:48 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/03 08:31:59 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ int main() {
   ft1.printStatus();
   st1.printStatus();
   ct1.printStatus();
+
+  // High Five test
   ft1.highFivesGuys();
+
+  // Test Inherited methods
+  ft1.takeDamage(10);
+  ft1.beRepaired(5);
+  ft1.printStatus();
+
   return (0);
 }

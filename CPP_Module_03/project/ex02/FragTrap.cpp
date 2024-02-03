@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:14:06 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 07:40:44 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/03 08:31:30 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,6 @@ void FragTrap::attack(const std::string &target) {
     return;
   std::cout << "FragTrap " << _name << " attacks " << target << ", causing "
             << _atk << " points of damage!" << std::endl;
-};
-
-void FragTrap::takeDamage(unsigned int amount) {
-  _hp -= amount;
-  std::cout << "FragTrap " << _name << " takes " << amount
-            << " points of damage!" << std::endl;
-};
-
-void FragTrap::beRepaired(unsigned int amount) {
-  if (!_useEnergy(1))
-    return;
-  _hp += amount;
-  std::cout << "FragTrap " << _name << " heals itself for " << amount
-            << " points of health!" << std::endl;
 };
 
 void FragTrap::printStatus(void) {
