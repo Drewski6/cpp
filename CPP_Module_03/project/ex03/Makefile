@@ -6,7 +6,7 @@
 #    By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 22:01:03 by dpentlan          #+#    #+#              #
-#    Updated: 2024/02/03 08:34:29 by dpentlan         ###   ########.fr        #
+#    Updated: 2024/02/03 14:25:43 by dpentlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CXX := c++
 SRC_DIR := 
 OBJ_DIR := 
 H_DIR := .
-FLAGS := -g -std=c++98 -Wall -Wextra -Werror
+FLAGS := -g -std=c++98 -Wall -Wextra -Werror # -Wshadow
+# -Wshadow compiler flag adds warnings for when two variables have the same name.
 
 ### PRETTY COLORS ###
 RED:=\033[31;1;4m

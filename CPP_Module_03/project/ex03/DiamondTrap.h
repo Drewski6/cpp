@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 08:34:49 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 09:20:00 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/03 15:00:20 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
 
   // Public Methods
   void attack(const std::string &target);
+  void whoAmI(void);
   void printStatus(void);
 
 private:
