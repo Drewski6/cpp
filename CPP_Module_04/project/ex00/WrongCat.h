@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.h                                              :+:      :+:    :+:   */
+/*   WrongCat.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 17:10:43 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/03 19:31:18 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-#define DOG_H
+#ifndef WRONGCAT_H
+#define WRONGCAT_H
 
-#include "Animal.h"
+#include "WrongAnimal.h"
 
-class Dog : public Animal {
+class WrongCat : public WrongAnimal {
 public:
   // Constructors , Copy Constructor, Destructor
-  Dog(void);
+  WrongCat(void);
 
-  Dog(Dog const &source);
-  ~Dog(void);
+  WrongCat(WrongCat const &source);
+  ~WrongCat(void);
 
   // Overloaded Operators
-  Dog &operator=(Dog const &rhs);
+  WrongCat &operator=(WrongCat const &rhs);
 
   // Public Methods
   void makeSound(void) const;
@@ -32,4 +32,4 @@ public:
 private:
 };
 
-#endif // DOG_H //
+#endif // WRONGCAT_H //

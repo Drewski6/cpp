@@ -6,7 +6,7 @@
 #    By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 22:01:03 by dpentlan          #+#    #+#              #
-#    Updated: 2024/02/03 15:55:36 by dpentlan         ###   ########.fr        #
+#    Updated: 2024/02/03 19:14:24 by dpentlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ SRCS = main.cpp \
 			 Animal.cpp \
 			 Dog.cpp \
 			 Cat.cpp \
+			 WrongAnimal.cpp \
+			 WrongCat.cpp \
 
 OBJS := $(patsubst %.cpp,$(OBJ_DIR)%.o,$(SRCS))
 

@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:30 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 17:10:37 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/03 19:26:30 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.h"
+#include "WrongCat.h"
 
 // Constructors , Copy Constructor, Destructor
-Cat::Cat(void) : Animal() {
-  Animal::type = "Cat";
-  std::cout << "Constructor for Cat" << std::endl;
+WrongCat::WrongCat(void) : WrongAnimal() {
+  WrongAnimal::type = "WrongCat";
+  std::cout << "Constructor for WrongCat" << std::endl;
 };
 
-Cat::Cat(Cat const &source) : Animal() {
-  std::cout << "Copy Constructor for Cat" << std::endl;
+WrongCat::WrongCat(WrongCat const &source) : WrongAnimal() {
+  std::cout << "Copy Constructor for WrongCat" << std::endl;
   *this = source;
 };
-Cat::~Cat(void) { std::cout << "Destructor for Cat" << std::endl; };
+WrongCat::~WrongCat(void) {
+  std::cout << "Destructor for WrongCat" << std::endl;
+};
 
 // Overloaded Operators
-Cat &Cat::operator=(Cat const &rhs) {
+WrongCat &WrongCat::operator=(WrongCat const &rhs) {
   if (this == &rhs)
     return (*this);
   // Additional code here if you need a deep copy.
@@ -33,6 +35,8 @@ Cat &Cat::operator=(Cat const &rhs) {
 };
 
 // Public Methods
-void Cat::makeSound(void) const { std::cout << "Meow....." << std::endl; };
+void WrongCat::makeSound(void) const {
+  std::cout << "Wrong Meow!!!" << std::endl;
+};
 
 // Private Methods

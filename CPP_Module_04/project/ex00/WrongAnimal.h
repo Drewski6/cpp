@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.h                                              :+:      :+:    :+:   */
+/*   WrongAnimal.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 17:10:43 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/03 15:54:28 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/03 19:32:04 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-#define DOG_H
+#ifndef WRONGANIMAL_H
+#define WRONGANIMAL_H
 
-#include "Animal.h"
+#include <iostream>
+#include <string>
 
-class Dog : public Animal {
+class WrongAnimal {
 public:
   // Constructors , Copy Constructor, Destructor
-  Dog(void);
+  WrongAnimal(void);
 
-  Dog(Dog const &source);
-  ~Dog(void);
+  WrongAnimal(WrongAnimal const &source);
+  ~WrongAnimal(void);
 
   // Overloaded Operators
-  Dog &operator=(Dog const &rhs);
+  WrongAnimal &operator=(WrongAnimal const &rhs);
 
   // Public Methods
+  std::string getType(void) const;
   void makeSound(void) const;
 
-private:
+protected:
+  std::string type;
 };
 
-#endif // DOG_H //
+#endif // WRONGANIMAL_H //

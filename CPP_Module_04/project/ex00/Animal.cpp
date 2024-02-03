@@ -6,17 +6,20 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 15:54:12 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 15:54:24 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:21:35 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.h"
 
 // Constructors , Copy Constructor, Destructor
-Animal::Animal(void){};
+Animal::Animal(void) { std::cout << "Constructor for Animal" << std::endl; };
 
-Animal::Animal(Animal const &source) { *this = source; };
-Animal::~Animal(void){};
+Animal::Animal(Animal const &source) {
+  std::cout << "Copy Constructor for Animal" << std::endl;
+  *this = source;
+};
+Animal::~Animal(void) { std::cout << "Destructor for Animal" << std::endl; };
 
 // Overloaded Operators
 Animal &Animal::operator=(Animal const &rhs) {
@@ -27,5 +30,8 @@ Animal &Animal::operator=(Animal const &rhs) {
 };
 
 // Public Methods
+void Animal::makeSound(void) const { return; };
+
+std::string Animal::getType(void) const { return type; };
 
 // Private Methods
