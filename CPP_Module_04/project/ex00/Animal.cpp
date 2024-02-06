@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 15:54:12 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 17:21:35 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/06 16:23:03 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ Animal &Animal::operator=(Animal const &rhs) {
 };
 
 // Public Methods
-void Animal::makeSound(void) const { return; };
+void Animal::makeSound(void) const { 
+	std::cout << "Animal class default makeSound call" << std::endl;
+	return; };
 
 std::string Animal::getType(void) const { return type; };
 

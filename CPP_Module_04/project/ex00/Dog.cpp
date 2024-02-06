@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:30 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 17:10:48 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/06 16:20:26 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog(void) : Animal() {
   std::cout << "Constructor for Dog" << std::endl;
 };
 
-Dog::Dog(Dog const &source) : Animal() {
+Dog::Dog(Dog const &source) : Animal(source) {
   std::cout << "Copy Constructor for Dog" << std::endl;
   *this = source;
 };
