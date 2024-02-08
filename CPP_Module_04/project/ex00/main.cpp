@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/06 16:06:16 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:26:49 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,17 @@ int main() {
     Dog dog1;
     Dog dog2 = dog1;
     dog2.makeSound();
+  }
+
+  std::cout << "\n===================================\n"
+            << "Example: 4.5\n"
+            << std::endl;
+
+  {
+    // Showing Copy Constructors for Cats.
+    Cat cat1;
+    Cat cat2 = cat1;
+    cat2.makeSound();
   }
 
   std::cout << "\n===================================\n"
