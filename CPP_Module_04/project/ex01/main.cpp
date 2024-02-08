@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/08 18:17:24 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:38:50 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,34 @@ int main() {
     // this shows that this was a deep copy.
     std::cout << "Idea for cat2 is: " << cat2.getIdea(0) << std::endl;
 
+  }
+
+  std::cout << std::endl;
+
+  {
+    // Requested in the subject
+    std::cout << "Example: 5" << std::endl;
+    int num_of_animals = 15;
+
+    Animal *animals[num_of_animals];
+
+
+    // Create all the animal instances
+    for (int i = 0; i < num_of_animals; i++) {
+      std::cout << "Creating animal number " << i << std::endl;
+      if (i < (num_of_animals / 2))
+        animals[i] = new Dog();
+      else
+        animals[i] = new Cat();
+      std::cout << std::endl;
+    }
+
+    // Delete the animal instances.
+    for (int i = 0; i < num_of_animals; i++) {
+      std::cout << "Deleting animal number " << i << std::endl;
+      delete animals[i];
+      std::cout << std::endl;
+    }
   }
 
   std::cout << std::endl;
