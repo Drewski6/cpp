@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:26:48 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 15:29:17 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/09 18:14:45 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "AMateria.h"
 
-class Ice {
+class Ice : public AMateria {
 public:
   // Constructors , Copy Constructor, Destructor
   Ice(void);
