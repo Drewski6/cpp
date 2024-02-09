@@ -6,20 +6,20 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:30 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/08 19:03:38 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:36:21 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.h"
 
 // Constructors , Copy Constructor, Destructor
-Cat::Cat(void) : A_Animal() {
+Cat::Cat(void) : AAnimal() {
   std::cout << "Constructor for Cat" << std::endl;
-  A_Animal::type = "Cat";
+  AAnimal::type = "Cat";
   brain = new Brain();
 };
 
-Cat::Cat(Cat const &source) : A_Animal(source) {
+Cat::Cat(Cat const &source) : AAnimal(source) {
   std::cout << "Copy Constructor for Cat" << std::endl;
   brain = new Brain(*(source.brain));
 };

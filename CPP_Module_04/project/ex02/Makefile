@@ -6,7 +6,7 @@
 #    By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 22:01:03 by dpentlan          #+#    #+#              #
-#    Updated: 2024/02/08 19:02:38 by dpentlan         ###   ########.fr        #
+#    Updated: 2024/02/09 14:37:18 by dpentlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ NOCOLOR:=\033[0m
 ### FILES ###
 
 SRCS = main.cpp \
-			 A_Animal.cpp \
+			 AAnimal.cpp \
 			 Dog.cpp \
 			 Cat.cpp \
 			 WrongAnimal.cpp \

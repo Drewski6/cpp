@@ -6,17 +6,17 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/08 19:01:47 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:36:08 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_H
 #define CAT_H
 
-#include "A_Animal.h"
+#include "AAnimal.h"
 #include "Brain.h"
 
-class Cat : public A_Animal {
+class Cat : public AAnimal {
 public:
   // Constructors , Copy Constructor, Destructor
   Cat(void);

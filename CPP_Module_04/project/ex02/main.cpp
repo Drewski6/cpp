@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/08 19:03:58 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:37:03 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int main() {
     std::cout << "Example: 5" << std::endl;
     int num_of_animals = 15;
 
-    A_Animal *animals[num_of_animals];
+    AAnimal *animals[num_of_animals];
 
 
     // Create all the animal instances

@@ -6,20 +6,20 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:30 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/08 19:03:14 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:36:47 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.h"
 
 // Constructors , Copy Constructor, Destructor
-Dog::Dog(void) : A_Animal() {
+Dog::Dog(void) : AAnimal() {
   std::cout << "Constructor for Dog" << std::endl;
-  A_Animal::type = "Dog";
+  AAnimal::type = "Dog";
   brain = new Brain();
 };
 
-Dog::Dog(Dog const &source) : A_Animal(source) {
+Dog::Dog(Dog const &source) : AAnimal(source) {
   std::cout << "Copy Constructor for Dog" << std::endl;
   brain = new Brain(*(source.brain));
 };
