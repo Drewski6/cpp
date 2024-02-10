@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:19:16 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/13 13:12:59 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/10 14:18:03 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ private:
   // Private Methods
   int get_contact_index(int num_contacts_displayed);
   int display_saved_contacts();
+  void requestContactInfo(std::string &contactItem,
+                          const std::string contactItemLabel);
+  bool containsOnlyWhitespace(const std::string &str);
 
 public:
   // Constructor
