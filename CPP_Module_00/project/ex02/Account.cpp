@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 14:10:31 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/13 17:01:36 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/10 14:59:25 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "Account.hpp"
 
+// Static Class Attribute initialization
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
@@ -146,3 +147,11 @@ void Account::_displayTimestamp(void) {
   std::cout << "[" << str_time << "] ";
   return;
 };
+
+// Testing:
+// Use this command to get data without timestamps
+// ./account | awk '{print substr($0, index($0, " ") + 1)}' > temp1.txt
+// Use this command to get the data from the school provided log
+// cat path/to/log.file | awk '{print substr($0, index($0, " ") + 1)}' >
+// temp2.txt
+// Compare with: diff temp1.txt temp2.txt
