@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 14:47:25 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/19 16:03:22 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/13 17:21:31 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ int main(int argc, char **argv) {
     std::string fileNameStr = argv[1];
     std::string searchStr = argv[2];
     std::string replaceStr = argv[3];
+
+    if (fileNameStr.length() == 0 || searchStr.length()  == 0 || replaceStr.length() == 0)
+    {
+      std::cout << "Error: Arguments cannot be empty strings." << std::endl;
+      return (1);
+    }
 
     Sed sedFile(fileNameStr);
     if (sedFile.getHasContent()) {
