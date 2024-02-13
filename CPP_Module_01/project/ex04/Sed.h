@@ -6,12 +6,12 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:42:36 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/19 15:54:44 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:03:02 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __SED_H__
-#define __SED_H__
+#ifndef SED_H
+#define SED_H
 
 #include <fstream>
 #include <iostream>
@@ -39,4 +39,4 @@ public:
   bool getHasContent();
 };
 
-#endif // __SED_H__
+#endif // SED_H //

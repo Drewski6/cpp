@@ -6,12 +6,12 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 23:12:46 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/17 13:54:46 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:01:45 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __HUMANA_H__
-#define __HUMANA_H__
+#ifndef HUMANA_H
+#define HUMANA_H
 
 #include "Weapon.h"
 
@@ -26,4 +26,4 @@ public:
   void attack(void);
 };
 
-#endif // __HUMANA_H__
+#endif // HUMANA_H //

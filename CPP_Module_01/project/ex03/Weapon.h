@@ -6,12 +6,12 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 23:07:55 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/17 13:45:01 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:02:11 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WEAPON_H__
-#define __WEAPON_H__
+#ifndef WEAPON_H
+#define WEAPON_H
 
 #include <string>
 
@@ -33,4 +33,4 @@ public:
   void setType(std::string new_type);
 };
 
-#endif // __WEAPON_H__
+#endif // WEAPON_H //

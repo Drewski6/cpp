@@ -6,12 +6,12 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:49:59 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/14 22:17:20 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:01:14 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ZOMBIE_H__
-#define __ZOMBIE_H__
+#ifndef ZOMBIE_H
+#define ZOMBIE_H
 
 #include <string>
 
@@ -28,4 +28,4 @@ public:
 
 Zombie *zombieHorde(int N, std::string name);
 
-#endif // __ZOMBIE_H__
+#endif // ZOMBIE_H //

@@ -6,12 +6,12 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 17:00:25 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/19 17:54:39 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:03:41 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __HARL_H__
-#define __HARL_H__
+#ifndef HARL_H
+#define HARL_H
 
 #include <iostream>
 #include <string>
@@ -31,4 +31,4 @@ public:
   void complain(std::string level);
 };
 
-#endif // __HARL_H__
+#endif // HARL_H //

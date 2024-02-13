@@ -6,12 +6,12 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:49:59 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/14 18:57:15 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:00:55 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ZOMBIE_H__
-#define __ZOMBIE_H__
+#ifndef ZOMBIE_H
+#define ZOMBIE_H
 
 #include <string>
 
@@ -29,4 +29,4 @@ public:
 Zombie *newZombie(std::string name);
 void randomChump(std::string name);
 
-#endif // __ZOMBIE_H__
+#endif // ZOMBIE_H
