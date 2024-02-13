@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:49:59 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/13 13:01:14 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/13 14:58:03 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ZOMBIE_H
 
 #include <string>
+#include <iostream>
 
 class Zombie {
 private:

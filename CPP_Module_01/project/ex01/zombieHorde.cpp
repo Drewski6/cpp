@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 18:53:49 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/14 22:13:53 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/13 14:55:48 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Zombie *zombieHorde(int N, std::string name) {
   Zombie *zombie_horde = new Zombie[N];
 
   for (int i = 0; i < N; i++) {
-    new (&zombie_horde[i]) Zombie(name); // placement new
+    new (&zombie_horde[i]) Zombie(name); // "placement new" not normal allocation
   }
 
   return zombie_horde;

@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:42:44 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/19 15:58:33 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/13 14:20:39 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,9 @@ void Sed::readInFile(std::ifstream &inputFile) {
   std::string line;
 
   for (int i = 0; std::getline(inputFile, line); i++) {
-    if (i != 0)
+    if (inputFile.eof())
+      return ;
+    else if (i != 0)
       fileContents += '\n';
     fileContents += line;
   }
