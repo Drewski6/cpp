@@ -6,11 +6,11 @@
 #    By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 22:01:03 by dpentlan          #+#    #+#              #
-#    Updated: 2024/01/25 16:40:10 by dpentlan         ###   ########.fr        #
+#    Updated: 2024/02/14 17:23:04 by dpentlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = sed_is_for_losers
+NAME = sifl
 
 ### SETTINGS ###
 CXX := c++
@@ -28,7 +28,7 @@ NOCOLOR:=\033[0m
 ### FILES ###
 
 SRCS = main.cpp \
-			 Sed.cpp \
+			 SedIsForLosers.cpp \
 
 OBJS := $(patsubst %.cpp,$(OBJ_DIR)%.o,$(SRCS))
 
