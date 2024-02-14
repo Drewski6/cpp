@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 17:00:35 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/19 20:59:58 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/14 22:33:01 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,32 @@ void Harl::complain(std::string level) {
     i++;
   }
 
-  if (i == 4) {
+  // Switch is required by subject but with -std-c++98 -Wall -Wextra -Werror and
+  // no break; statement, we will always get a compiler warning, which will not
+  // compiler with the -Werror flag. Best solution I could find is to add
+  // incrementors
+  switch (i) {
+  case 0:
+    (this->*ptrs[i++])();
+    (this->*ptrs[i++])();
+    (this->*ptrs[i++])();
+    (this->*ptrs[i])();
+    break;
+  case 1:
+    (this->*ptrs[i++])();
+    (this->*ptrs[i++])();
+    (this->*ptrs[i])();
+    break;
+  case 2:
+    (this->*ptrs[i++])();
+    (this->*ptrs[i])();
+    break;
+  case 3:
+    (this->*ptrs[i])();
+    break;
+  default:
     std::cout << "[ Probably complaining about insignificant problems ]"
               << std::endl;
-  }
-
-  while (i < 4) {
-    (this->*ptrs[i])();
-    i++;
   }
 };
 

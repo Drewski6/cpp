@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:03:45 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/14 17:42:05 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/14 22:03:12 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ bool findAndReplace(char *fileNameCh, std::string &searchStr,
 
   inputFile.open(fileNameCh);
   if (!inputFile.is_open()) {
-    std::cerr << "Error: Filename \"" << fileNameCh << "\" not valid."
+    std::cerr << "Error: Unable to open file named \"" << fileNameCh
+              << "\".\nCheck that it exists and has appropriate permissions."
               << std::endl;
     return (1);
   }
@@ -46,10 +47,10 @@ bool findAndReplace(char *fileNameCh, std::string &searchStr,
   // Find and replace
   for (size_t loc = 0; loc != std::string::npos;
        loc = fileContents.find(searchStr, loc + searchStr.length())) {
-    if (loc != 0) {
+    if (loc != 0 || (fileContents.find(searchStr) == 0)) {
       fileContents.erase(loc, searchStr.length());
       fileContents.insert(loc, replaceStr);
-      loc = loc + replaceStr.length();
+      loc = loc + replaceStr.length() - searchStr.length();
     }
   }
 
