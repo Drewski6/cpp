@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:31:00 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 11:42:59 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/15 13:47:22 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.h"
+#include "Point.hpp"
 #include <iostream>
 
 bool bsp(Point const a, Point const b, Point const c, Point const point);
@@ -46,7 +46,7 @@ int main(void) {
   //     012345
   */
   {
-    std::cout << "Tests:" << std::endl;
+    std::cout << "\nTests:" << std::endl;
 
     {
       Point p1(0, 0);

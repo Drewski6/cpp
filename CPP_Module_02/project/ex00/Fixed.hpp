@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.h                                            :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 19:54:45 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 11:27:39 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/01/26 18:14:42 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/15 10:54:46 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_H
-#define POINT_H
+#pragma once
 
-#include "Fixed.h"
+#include <iostream>
 
-class Point {
+class Fixed {
 public:
   // Constructors , Copy Constructor, Destructor
-  Point(void);
-  Point(const float x_val, const float y_val);
-
-  Point(Point const &source);
-  ~Point(void);
+  Fixed(void);
+  Fixed(Fixed const &source);
+  ~Fixed(void);
 
   // Overloaded Operators
-  Point &operator=(Point const &rhs);
+  Fixed &operator=(Fixed const &rhs);
 
-  // Public methods
-  Fixed getX(void) const;
-  Fixed getY(void) const;
+  // Getters
+  int getRawBits(void) const;
+  // Setters
+  void setRawBits(int const raw);
 
 private:
-  Fixed _x;
-  Fixed _y;
+  int _fixed_num;
+  static const int _bin_pnt = 8;
 };
-
-std::ostream &operator<<(std::ostream &os, Point const &p);
-
-#endif // POINT_H //

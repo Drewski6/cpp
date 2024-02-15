@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.h                                            :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:14:42 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/01 11:27:24 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:30:48 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-#define FIXED_H
+#pragma once
 
 #include <cmath>
 #include <iostream>
@@ -66,5 +65,3 @@ private:
 
 // Stream Insertion Operator
 std::ostream &operator<<(std::ostream &os, Fixed const &f);
-
-#endif // FIXED_H //

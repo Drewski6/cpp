@@ -6,10 +6,10 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:14:52 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/30 21:12:43 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/15 11:57:42 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "Fixed.h"
+#include "Fixed.hpp"
 
 // Constructors , Copy Constructor, Destructor
 Fixed::Fixed(void)
@@ -171,5 +171,3 @@ int Fixed::toInt(void) const {
   // Bit shift in other direction to return to regular int.
   return (_fixedNum >> _binPnt);
 };
-
-// Private Methods

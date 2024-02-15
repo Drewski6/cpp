@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 19:54:40 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/31 21:42:16 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/15 13:09:06 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.h"
+#include "Point.hpp"
 
 float areaTriangle(Point const a, Point const b, Point const c) {
   // Formula: 0.5 * abs( x0(y1 - y2) + x1(y2 - y0) + x2(y0 - y1) )
@@ -25,10 +25,10 @@ float areaTriangle(Point const a, Point const b, Point const c) {
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point) {
-  float areaT1 = areaTriangle(point, b, c);
-  float areaT2 = areaTriangle(a, point, c);
-  float areaT3 = areaTriangle(a, b, point);
-  float areaTOrig = areaTriangle(a, b, c);
+  const float areaT1 = areaTriangle(point, b, c);
+  const float areaT2 = areaTriangle(a, point, c);
+  const float areaT3 = areaTriangle(a, b, point);
+  const float areaTOrig = areaTriangle(a, b, c);
 
   // Print statements for debugging if you want...
   // std::cout << "areaT1: " << areaT1 << std::endl;

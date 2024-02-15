@@ -6,10 +6,10 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:14:52 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/01/27 20:14:11 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:29:00 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "Fixed.h"
+#include "Fixed.hpp"
 
 // Constructors , Copy Constructor, Destructor
 Fixed::Fixed(void) {
