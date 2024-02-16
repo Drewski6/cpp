@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.h                                         :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:13:57 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 08:51:46 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:05:14 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_H
-#define FRAGTRAP_H
+#pragma once
 
-#include "ClapTrap.h"
+#include "ClapTrap.hpp"
 
-// Adding virtual to avoid the "Diamond Problem"
-class FragTrap : virtual public ClapTrap {
+class FragTrap : public ClapTrap {
 public:
   // Constructors , Copy Constructor, Destructor
   FragTrap(std::string name);
@@ -34,5 +32,3 @@ public:
 
 private:
 };
-
-#endif // FRAGTRAP_H //

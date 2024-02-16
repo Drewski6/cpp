@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.h                                         :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 11:13:57 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 08:15:03 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/03 08:34:49 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 17:53:29 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
+#pragma once
 
-#include "ClapTrap.h"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class DiamondTrap : public FragTrap, public ScavTrap {
 public:
   // Constructors , Copy Constructor, Destructor
-  ScavTrap(std::string name);
+  DiamondTrap(std::string name_val);
 
-  ScavTrap(ScavTrap const &source);
-  ~ScavTrap(void);
+  DiamondTrap(DiamondTrap const &source);
+  ~DiamondTrap(void);
 
   // Overloaded Operators
-  ScavTrap &operator=(ScavTrap const &rhs);
+  DiamondTrap &operator=(DiamondTrap const &rhs);
 
   // Public Methods
-  void guardGate();
   void attack(const std::string &target);
+  void whoAmI(void);
   void printStatus(void);
 
 private:
-  bool _gateKeeperMode;
+  std::string _name;
 };
-
-#endif // SCAVTRAP_H //

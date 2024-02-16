@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:14:06 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 08:26:50 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:59:29 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ScavTrap.h"
-#include "ClapTrap.h"
+#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
 // Constructors , Copy Constructor, Destructor
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _gateKeeperMode(false) {
@@ -32,7 +32,6 @@ ScavTrap::~ScavTrap(void) {
 ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {
   if (this == &rhs)
     return (*this);
-  // Additional code here if you need a deep copy.
   return (*this);
 };
 

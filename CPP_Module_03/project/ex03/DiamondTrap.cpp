@@ -6,27 +6,24 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 08:35:01 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 15:04:08 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 18:09:40 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.h"
-#include "ClapTrap.h"
-#include "FragTrap.h"
-#include "ScavTrap.h"
+#include "DiamondTrap.hpp"
 
 // Constructors , Copy Constructor, Destructor
 DiamondTrap::DiamondTrap(std::string name_val)
-    : ClapTrap(name_val + "_clap_name"), ScavTrap(name_val), FragTrap(name_val),
+    : ClapTrap(name_val + "_clap_name"), FragTrap(name_val), ScavTrap(name_val),
       _name(name_val) {
   std::cout << "Constructor called for new DiamondTrap " << _name << std::endl;
-  _hp = FragTrap::_hp;
-  _ep = ScavTrap::_ep;
-  _atk = FragTrap::_atk;
+  FragTrap::_hp = 100;
+  ScavTrap::_ep = 50;
+  FragTrap::_atk = 30;
 };
 
 DiamondTrap::DiamondTrap(DiamondTrap const &source)
-    : ClapTrap(source._name), ScavTrap(source._name), FragTrap(source._name) {
+    : ClapTrap(source._name), FragTrap(source._name), ScavTrap(source._name) {
   std::cout << "Copy Constructor called for new DiamondTrap " << _name
             << std::endl;
   *this = source;
@@ -58,12 +55,10 @@ void DiamondTrap::whoAmI(void) {
 void DiamondTrap::printStatus(void) {
   std::cout << "\t" << _name << ": \n"
             << "\tClapTrap::_name: " << ClapTrap::_name << "\n"
-            << "\tHealth: " << _hp << "\n"
-            << "\tEnergy: " << _ep << "\n"
-            << "\tAttack: " << _atk << "\n"
+            << "\tHealth: " << FragTrap::_hp << "\n"
+            << "\tEnergy: " << ScavTrap::_ep << "\n"
+            << "\tAttack: " << FragTrap::_atk << "\n"
             << "\tGate Keeper Mode: " << (_gateKeeperMode ? "true" : "false")
             << "\n"
             << std::endl;
 };
-
-// Private Methods

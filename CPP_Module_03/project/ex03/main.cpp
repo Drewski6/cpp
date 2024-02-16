@@ -6,12 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 15:02:40 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:41:40 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
-#include "DiamondTrap.h"
+#include "DiamondTrap.hpp"
 #include <iostream>
 
 int main() {

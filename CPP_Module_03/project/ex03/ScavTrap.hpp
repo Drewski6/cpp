@@ -1,48 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.h                                         :+:      :+:    :+:   */
+/*   ScavTrap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 09:06:13 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 08:10:50 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/01 11:13:57 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 16:39:40 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_H
-#define CLAPTRAP_H
+#pragma once
 
-#include <iostream>
-#include <string>
+#include "ClapTrap.hpp"
 
-class ClapTrap {
+// Adding virtual to avoid the "Diamond Problem"
+class ScavTrap : virtual public ClapTrap {
 public:
   // Constructors , Copy Constructor, Destructor
-  ClapTrap(std::string name);
+  ScavTrap(std::string name);
 
-  ClapTrap(ClapTrap const &source);
-  ~ClapTrap(void);
+  ScavTrap(ScavTrap const &source);
+  ~ScavTrap(void);
 
   // Overloaded Operators
-  ClapTrap &operator=(ClapTrap const &rhs);
+  ScavTrap &operator=(ScavTrap const &rhs);
 
   // Public Methods
+  void guardGate();
   void attack(const std::string &target);
-  void takeDamage(unsigned int amount);
-  void beRepaired(unsigned int amount);
   void printStatus(void);
 
 protected:
-  std::string _name;
-  int _hp;
-  int _ep;
-  int _atk;
-
-  // Protected Methods
-  bool _useEnergy(int amount);
-  bool _energyCheck(int amount);
-  bool _healthCheck(int amount);
+  bool _gateKeeperMode;
 };
-
-#endif // CLAPTRAP_H //

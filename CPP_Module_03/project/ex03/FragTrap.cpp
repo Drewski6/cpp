@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:14:06 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 08:31:30 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 18:11:57 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.h"
+#include "FragTrap.hpp"
 
 // Constructors , Copy Constructor, Destructor
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
@@ -32,7 +32,6 @@ FragTrap::~FragTrap(void) {
 FragTrap &FragTrap::operator=(FragTrap const &rhs) {
   if (this == &rhs)
     return (*this);
-  // Additional code here if you need a deep copy.
   return (*this);
 };
 
@@ -57,5 +56,3 @@ void FragTrap::printStatus(void) {
             << "\tAttack: " << _atk << "\n"
             << std::endl;
 }
-
-// Private Methods

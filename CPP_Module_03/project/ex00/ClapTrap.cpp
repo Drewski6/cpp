@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:37 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 08:14:02 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:52:06 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
+#include "ClapTrap.hpp"
 
 // Constructors , Copy Constructor, Destructor
 // No default construtor because subject indicates a name should be passed.
@@ -18,11 +18,8 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _atk(0) {
   std::cout << "Constructor called for new ClapTrap " << _name << std::endl;
 };
 
-ClapTrap::ClapTrap(ClapTrap const &source) {
-  this->_name = source._name;
-  this->_hp = source._hp;
-  this->_ep = source._ep;
-  this->_atk = source._atk;
+ClapTrap::ClapTrap(ClapTrap const &source)
+    : _name(source._name), _hp(source._hp), _ep(source._ep), _atk(source._atk) {
   std::cout << "Copy Constructor called for new ClapTrap " << _name
             << std::endl;
 };
@@ -35,11 +32,11 @@ ClapTrap::~ClapTrap(void) {
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
   if (this == &rhs)
     return (*this);
-  // Additional code here if you need a deep copy.
   return (*this);
 };
 
-// Public Methods
+// ====== Public Methods ====== //
+
 void ClapTrap::attack(const std::string &target) {
   if (!_useEnergy(1))
     return;
@@ -69,12 +66,13 @@ void ClapTrap::printStatus(void) {
             << std::endl;
 }
 
-// Private Methods
+// ====== Private Methods ====== //
+
 bool ClapTrap::_useEnergy(int amount) {
   if (!_healthCheck(amount))
-    return (false);
+    return false;
   if (!_energyCheck(amount))
-    return (false);
+    return false;
   _ep -= amount;
   return true;
 }

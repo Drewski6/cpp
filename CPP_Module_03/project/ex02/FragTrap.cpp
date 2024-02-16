@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:14:06 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 08:31:30 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:05:26 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.h"
+#include "FragTrap.hpp"
 
 // Constructors , Copy Constructor, Destructor
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {

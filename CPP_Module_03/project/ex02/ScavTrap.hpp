@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.h                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:13:57 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 08:51:41 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:57:19 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
+#pragma once
 
-#include "ClapTrap.h"
+#include "ClapTrap.hpp"
 
-// Adding virtual to avoid the "Diamond Problem"
-class ScavTrap : virtual public ClapTrap {
+class ScavTrap : public ClapTrap {
 public:
   // Constructors , Copy Constructor, Destructor
   ScavTrap(std::string name);
@@ -32,8 +30,6 @@ public:
   void attack(const std::string &target);
   void printStatus(void);
 
-protected:
+private:
   bool _gateKeeperMode;
 };
-
-#endif // SCAVTRAP_H //

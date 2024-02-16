@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.h                                         :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:13 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 08:10:50 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:58:04 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_H
-#define CLAPTRAP_H
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -31,7 +30,8 @@ public:
   void attack(const std::string &target);
   void takeDamage(unsigned int amount);
   void beRepaired(unsigned int amount);
-  void printStatus(void);
+
+  void printStatus(void); // For making evaluation easier. :)
 
 protected:
   std::string _name;
@@ -39,10 +39,8 @@ protected:
   int _ep;
   int _atk;
 
-  // Protected Methods
+  // Private Methods
   bool _useEnergy(int amount);
   bool _energyCheck(int amount);
   bool _healthCheck(int amount);
 };
-
-#endif // CLAPTRAP_H //

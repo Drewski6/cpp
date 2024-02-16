@@ -1,37 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.h                                         :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 11:13:57 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 08:31:18 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/01 09:06:13 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 10:00:39 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_H
-#define FRAGTRAP_H
+#pragma once
 
-#include "ClapTrap.h"
+#include <iostream>
+#include <string>
 
-class FragTrap : public ClapTrap {
+class ClapTrap {
 public:
   // Constructors , Copy Constructor, Destructor
-  FragTrap(std::string name);
+  ClapTrap(std::string name);
 
-  FragTrap(FragTrap const &source);
-  ~FragTrap(void);
+  ClapTrap(ClapTrap const &source);
+  ~ClapTrap(void);
 
   // Overloaded Operators
-  FragTrap &operator=(FragTrap const &rhs);
+  ClapTrap &operator=(ClapTrap const &rhs);
 
   // Public Methods
-  void highFivesGuys(void);
   void attack(const std::string &target);
-  void printStatus(void);
+  void takeDamage(unsigned int amount);
+  void beRepaired(unsigned int amount);
+
+  void printStatus(void); // For making evaluation easier. :)
 
 private:
-};
+  std::string _name;
+  int _hp;
+  int _ep;
+  int _atk;
 
-#endif // FRAGTRAP_H //
+  // Private Methods
+  bool _useEnergy(int amount);
+  bool _energyCheck(int amount);
+  bool _healthCheck(int amount);
+};

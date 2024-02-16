@@ -6,12 +6,12 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 08:31:59 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:05:49 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.h"
-#include "ScavTrap.h"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
   // main
