@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:26:55 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 15:27:00 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:30:08 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.h"
+#include "Ice.hpp"
 
 // Constructors , Copy Constructor, Destructor
 Ice::Ice(void){};
@@ -29,4 +29,3 @@ Ice &Ice::operator=(Ice const &rhs) {
 // Public Methods
 
 // Private Methods
-

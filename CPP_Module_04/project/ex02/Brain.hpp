@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.h                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 16:42:07 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/08 17:47:06 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:23:45 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_H
-#define BRAIN_H
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -20,7 +19,7 @@ class Brain {
 public:
   // Constructors , Copy Constructor, Destructor
   Brain(void);
-  
+
   Brain(Brain const &source);
   ~Brain(void);
 
@@ -36,5 +35,3 @@ public:
 
 private:
 };
-
-#endif // BRAIN_H //

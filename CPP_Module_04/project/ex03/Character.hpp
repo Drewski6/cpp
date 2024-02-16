@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.h                                          :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 15:54:28 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 14:35:53 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/09 15:26:06 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 19:29:36 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AANIMAL_H
-#define AANIMAL_H
+#pragma once
 
-#include <iostream>
-#include <string>
+#include "ICharacter.hpp"
 
-class AAnimal {
+class Character {
 public:
   // Constructors , Copy Constructor, Destructor
-  AAnimal(void);
+  Character(void);
 
-  AAnimal(AAnimal const &source);
-  virtual ~AAnimal(void);
+  Character(Character const &source);
+  ~Character(void);
 
   // Overloaded Operators
-  AAnimal &operator=(AAnimal const &rhs);
+  Character &operator=(Character const &rhs);
 
-  // Public Methods
-  std::string getType(void) const;
-  virtual void makeSound(void) const = 0;
-
-protected:
-  std::string type;
+private:
 };
-
-#endif // AANIMAL_H //

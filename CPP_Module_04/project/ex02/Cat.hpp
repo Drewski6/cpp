@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.h                                              :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 17:10:30 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:24:17 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-#define CAT_H
+#pragma once
 
-#include "Animal.h"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 public:
   // Constructors , Copy Constructor, Destructor
   Cat(void);
@@ -28,8 +28,9 @@ public:
 
   // Public Methods
   void makeSound(void) const;
+  std::string &getIdea(int idea_index);
+  void setIdea(int idea_index, std::string idea_content);
 
 private:
+  Brain *brain;
 };
-
-#endif // CAT_H //

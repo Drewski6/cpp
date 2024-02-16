@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:26:34 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 15:26:39 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:29:47 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.h"
+#include "Cure.hpp"
 
 // Constructors , Copy Constructor, Destructor
 Cure::Cure(void){};
@@ -29,4 +29,3 @@ Cure &Cure::operator=(Cure const &rhs) {
 // Public Methods
 
 // Private Methods
-

@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:30 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/06 16:20:26 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:16:44 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.h"
+#include "Dog.hpp"
 
 // Constructors , Copy Constructor, Destructor
 Dog::Dog(void) : Animal() {

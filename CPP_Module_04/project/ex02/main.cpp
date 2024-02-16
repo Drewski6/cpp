@@ -6,28 +6,38 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 14:37:03 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 20:50:03 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.h"
-#include "Dog.h"
-#include "WrongCat.h"
+#include "Cat.hpp"
+#include "Dog.hpp"
 #include <iostream>
 
 int main() {
+
+  {
+    // Adding the pure virtual method 'makeSound' makes the Animal class not
+    // directly instnatiable.
+    // AAnimal an_new_animal; // creates a compiler error.
+  }
+
+  std::cout << std::endl;
 
   {
     std::cout << "Example: 1" << std::endl;
 
     Dog dog1;
     dog1.setIdea(0, "Ball!");
-    std::cout << "idea is " << dog1.getIdea(0) << " address is " << &dog1.getIdea(0) << std::endl;
+    std::cout << "idea is " << dog1.getIdea(0) << " address is "
+              << &dog1.getIdea(0) << std::endl;
 
     // demonstration of the copy constructor working.
-    // prints addresses to show the strings have the same content but different addresses.
+    // prints addresses to show the strings have the same content but different
+    // addresses.
     Dog dog2 = dog1;
-    std::cout << "idea of copy is " << dog2.getIdea(0) << " address is " << &dog2.getIdea(0) << std::endl;
+    std::cout << "idea of copy is " << dog2.getIdea(0) << " address is "
+              << &dog2.getIdea(0) << std::endl;
   }
 
   std::cout << std::endl;
@@ -45,7 +55,6 @@ int main() {
     // idea was made for dog1 but is present in dog2 after dog1 is destroyed.
     // this shows that this was a deep copy.
     std::cout << "Idea for dog2 is: " << dog2.getIdea(0) << std::endl;
-
   }
 
   std::cout << std::endl;
@@ -55,12 +64,15 @@ int main() {
     std::cout << "Example: 3" << std::endl;
     Cat cat1;
     cat1.setIdea(0, "Ball!");
-    std::cout << "idea is " << cat1.getIdea(0) << " address is " << &cat1.getIdea(0) << std::endl;
+    std::cout << "idea is " << cat1.getIdea(0) << " address is "
+              << &cat1.getIdea(0) << std::endl;
 
     // demonstration of the copy constructor working.
-    // prints addresses to show the strings have the same content but different addresses.
+    // prints addresses to show the strings have the same content but different
+    // addresses.
     Cat cat2 = cat1;
-    std::cout << "idea of copy is " << cat2.getIdea(0) << " address is " << &cat2.getIdea(0) << std::endl;
+    std::cout << "idea of copy is " << cat2.getIdea(0) << " address is "
+              << &cat2.getIdea(0) << std::endl;
   }
 
   std::cout << std::endl;
@@ -79,7 +91,6 @@ int main() {
     // idea was made for cat1 but is present in cat2 after cat1 is destroyed.
     // this shows that this was a deep copy.
     std::cout << "Idea for cat2 is: " << cat2.getIdea(0) << std::endl;
-
   }
 
   std::cout << std::endl;
@@ -90,7 +101,6 @@ int main() {
     int num_of_animals = 15;
 
     AAnimal *animals[num_of_animals];
-
 
     // Create all the animal instances
     for (int i = 0; i < num_of_animals; i++) {
@@ -108,13 +118,6 @@ int main() {
       delete animals[i];
       std::cout << std::endl;
     }
-  }
-
-  std::cout << std::endl;
-
-  {
-    // Adding the pure virtual method 'makeSound' makes the Animal class not directly instnatiable.
-    // A_Animal an_new_animal;
   }
 
   std::cout << std::endl;

@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 15:54:12 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/06 16:23:03 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:16:31 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.h"
+#include "Animal.hpp"
 
 // Constructors , Copy Constructor, Destructor
 Animal::Animal(void) { std::cout << "Constructor for Animal" << std::endl; };
@@ -30,9 +30,10 @@ Animal &Animal::operator=(Animal const &rhs) {
 };
 
 // Public Methods
-void Animal::makeSound(void) const { 
-	std::cout << "Animal class default makeSound call" << std::endl;
-	return; };
+void Animal::makeSound(void) const {
+  std::cout << "Animal class default makeSound call" << std::endl;
+  return;
+};
 
 std::string Animal::getType(void) const { return type; };
 

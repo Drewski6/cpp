@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.h                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 19:31:18 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:16:24 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_H
-#define WRONGCAT_H
+#pragma once
 
-#include "WrongAnimal.h"
+#include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal {
 public:
@@ -31,5 +30,3 @@ public:
 
 private:
 };
-
-#endif // WRONGCAT_H //

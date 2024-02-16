@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:30 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 19:26:30 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:21:00 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.h"
+#include "WrongCat.hpp"
 
 // Constructors , Copy Constructor, Destructor
 WrongCat::WrongCat(void) : WrongAnimal() {

@@ -6,17 +6,17 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 18:14:15 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:30:55 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-#include "AMateria.h"
-#include "Ice.h"
-#include "Cure.h"
-#include "Character.h"
-#include "MateriaSource.h"
+#include "AMateria.hpp"
+#include "Character.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "MateriaSource.hpp"
 
 int main() {
 

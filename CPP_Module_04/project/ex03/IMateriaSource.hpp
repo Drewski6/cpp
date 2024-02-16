@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.h                                              :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 17:10:43 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/09 15:27:34 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 19:30:44 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-#define DOG_H
+#pragma once
 
-#include "Animal.h"
+#include "AMateria.hpp"
+#include <string>
 
-class Dog : public Animal {
+class IMateriaSource {
 public:
-  // Constructors , Copy Constructor, Destructor
-  Dog(void);
-
-  Dog(Dog const &source);
-  ~Dog(void);
-
-  // Overloaded Operators
-  Dog &operator=(Dog const &rhs);
-
-  // Public Methods
-  void makeSound(void) const;
-
-private:
+  virtual ~IMateriaSource() {}
+  virtual void learnMateria(AMateria *) = 0;
+  virtual AMateria *createMateria(std::string const &type) = 0;
 };
-
-#endif // DOG_H //

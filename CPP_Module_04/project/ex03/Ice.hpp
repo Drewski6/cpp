@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.h                                              :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/08 18:18:53 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/09 15:26:48 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 19:30:21 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-#define CAT_H
+#pragma once
 
-#include "Animal.h"
-#include "Brain.h"
+#include "AMateria.hpp"
 
-class Cat : public Animal {
+class Ice : public AMateria {
 public:
   // Constructors , Copy Constructor, Destructor
-  Cat(void);
+  Ice(void);
 
-  Cat(Cat const &source);
-  ~Cat(void);
+  Ice(Ice const &source);
+  ~Ice(void);
 
   // Overloaded Operators
-  Cat &operator=(Cat const &rhs);
-
-  // Public Methods
-  void makeSound(void) const;
-  std::string &getIdea(int idea_index);
-  void setIdea(int idea_index, std::string idea_content);
+  Ice &operator=(Ice const &rhs);
 
 private:
-  Brain *brain;
 };
-
-#endif // CAT_H //

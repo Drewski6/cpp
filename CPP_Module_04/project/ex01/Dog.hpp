@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.h                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 15:54:28 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 17:39:19 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 19:20:17 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#pragma once
 
-#include <iostream>
-#include <string>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Animal {
+class Dog : public Animal {
 public:
   // Constructors , Copy Constructor, Destructor
-  Animal(void);
+  Dog(void);
 
-  Animal(Animal const &source);
-  virtual ~Animal(void);
+  Dog(Dog const &source);
+  ~Dog(void);
 
   // Overloaded Operators
-  Animal &operator=(Animal const &rhs);
+  Dog &operator=(Dog const &rhs);
 
   // Public Methods
-  std::string getType(void) const;
-  virtual void makeSound(void) const;
+  void makeSound(void) const;
+  std::string &getIdea(int idea_index);
+  void setIdea(int idea_index, std::string idea_content);
 
-protected:
-  std::string type;
+private:
+  // Private Attributes
+  Brain *brain;
 };
-
-#endif // ANIMAL_H //

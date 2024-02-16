@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.h                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 15:54:28 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 17:39:19 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 19:15:38 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#pragma once
 
-#include <iostream>
-#include <string>
+#include "Animal.hpp"
 
-class Animal {
+class Dog : public Animal {
 public:
   // Constructors , Copy Constructor, Destructor
-  Animal(void);
+  Dog(void);
 
-  Animal(Animal const &source);
-  virtual ~Animal(void);
+  Dog(Dog const &source);
+  ~Dog(void);
 
   // Overloaded Operators
-  Animal &operator=(Animal const &rhs);
+  Dog &operator=(Dog const &rhs);
 
   // Public Methods
-  std::string getType(void) const;
-  virtual void makeSound(void) const;
+  void makeSound(void) const;
 
-protected:
-  std::string type;
+private:
 };
-
-#endif // ANIMAL_H //

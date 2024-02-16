@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:30 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/08 17:52:25 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:19:57 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.h"
+#include "Dog.hpp"
 
 // Constructors , Copy Constructor, Destructor
 Dog::Dog(void) : Animal() {
@@ -24,14 +24,14 @@ Dog::Dog(Dog const &source) : Animal(source) {
   brain = new Brain(*(source.brain));
 };
 
-Dog::~Dog(void) { 
-  std::cout << "Destructor for Dog" << std::endl; 
+Dog::~Dog(void) {
+  std::cout << "Destructor for Dog" << std::endl;
   delete brain;
 };
 
 // Overloaded Operators
 Dog &Dog::operator=(Dog const &rhs) {
-  std::cout << "Overloaded operator= for Dog" << std::endl; 
+  std::cout << "Overloaded operator= for Dog" << std::endl;
   if (this == &rhs)
     return (*this);
   delete brain;

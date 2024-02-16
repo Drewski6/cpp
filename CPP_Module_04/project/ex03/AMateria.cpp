@@ -6,14 +6,14 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:25:14 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 17:25:13 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:29:05 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.h"
+#include "AMateria.hpp"
 
 // Constructors , Copy Constructor, Destructor
-AMateria::AMateria(std::string const & type) {
+AMateria::AMateria(std::string const &type) {
   // Constructor
   (void)type;
 };
@@ -30,9 +30,6 @@ AMateria &AMateria::operator=(AMateria const &rhs) {
 };
 
 // Public Methods
-  void AMateria::use(ICharacter& target) {
-    (void) target;
-  };
+void AMateria::use(ICharacter &target) { (void)target; };
 
 // Private Methods
-

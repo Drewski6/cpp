@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.h                                         :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 15:25:34 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 17:12:06 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/03 15:54:28 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 19:14:51 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_H
-#define AMATERIA_H
+#pragma once
 
+#include <iostream>
 #include <string>
 
-class ICharacter;
-
-class AMateria {
-protected:
-  // [...]
+class Animal {
 public:
   // Constructors , Copy Constructor, Destructor
-  AMateria(std::string const & type);
-  AMateria(AMateria const &source);
-  ~AMateria(void);
+  Animal(void);
+
+  Animal(Animal const &source);
+  virtual ~Animal(void);
 
   // Overloaded Operators
-  AMateria &operator=(AMateria const &rhs);
+  Animal &operator=(Animal const &rhs);
 
-  // [...]
-  std::string const & getType() const; //Returns the materia type
-  virtual AMateria* clone() const = 0;
-  virtual void use(ICharacter& target);
+  // Public Methods
+  std::string getType(void) const;
+  virtual void makeSound(void) const;
+
+protected:
+  std::string type;
 };
-
-#endif // AMATERIA_H //

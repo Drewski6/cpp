@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.h                                              :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 14:36:08 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/03 15:54:28 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 19:20:50 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-#define CAT_H
+#pragma once
 
-#include "AAnimal.h"
-#include "Brain.h"
+#include <iostream>
+#include <string>
 
-class Cat : public AAnimal {
+class WrongAnimal {
 public:
   // Constructors , Copy Constructor, Destructor
-  Cat(void);
+  WrongAnimal(void);
 
-  Cat(Cat const &source);
-  ~Cat(void);
+  WrongAnimal(WrongAnimal const &source);
+  ~WrongAnimal(void);
 
   // Overloaded Operators
-  Cat &operator=(Cat const &rhs);
+  WrongAnimal &operator=(WrongAnimal const &rhs);
 
   // Public Methods
+  std::string getType(void) const;
   void makeSound(void) const;
-  std::string &getIdea(int idea_index);
-  void setIdea(int idea_index, std::string idea_content);
 
-private:
-  Brain *brain;
+protected:
+  std::string type;
 };
-
-#endif // CAT_H //

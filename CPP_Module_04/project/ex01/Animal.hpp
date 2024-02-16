@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.h                                      :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 15:54:28 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 19:32:04 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 20:41:12 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_H
-#define WRONGANIMAL_H
+#pragma once
 
 #include <iostream>
 #include <string>
 
-class WrongAnimal {
+class Animal {
 public:
   // Constructors , Copy Constructor, Destructor
-  WrongAnimal(void);
+  Animal(void);
 
-  WrongAnimal(WrongAnimal const &source);
-  ~WrongAnimal(void);
+  Animal(Animal const &source);
+  virtual ~Animal(void);
 
   // Overloaded Operators
-  WrongAnimal &operator=(WrongAnimal const &rhs);
+  Animal &operator=(Animal const &rhs);
 
   // Public Methods
   std::string getType(void) const;
-  void makeSound(void) const;
+  virtual void makeSound(void) const;
 
 protected:
   std::string type;
 };
-
-#endif // WRONGANIMAL_H //

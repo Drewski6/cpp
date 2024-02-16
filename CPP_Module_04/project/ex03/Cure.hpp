@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.h                                       :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 15:27:04 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 15:51:29 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/09 15:26:22 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 19:30:01 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_H
-#define ICHARACTER_H
+#pragma once
 
-#include <string>
-#include "AMateria.h"
+#include "AMateria.hpp"
 
-class ICharacter {
+class Cure {
 public:
-  virtual ~ICharacter() {}
-  virtual std::string const & getName() const = 0;
-  virtual void equip(AMateria* m) = 0;
-  virtual void unequip(int idx) = 0;
-  virtual void use(int idx, ICharacter& target) = 0;
-};
+  // Constructors , Copy Constructor, Destructor
+  Cure(void);
 
-#endif // ICHARACTER_H //
+  Cure(Cure const &source);
+  ~Cure(void);
+
+  // Overloaded Operators
+  Cure &operator=(Cure const &rhs);
+
+private:
+};

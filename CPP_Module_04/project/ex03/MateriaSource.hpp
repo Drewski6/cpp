@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.h                                             :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 15:26:22 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 15:29:04 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/09 15:27:57 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 19:31:21 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_H
-#define CURE_H
+#pragma once
 
-#include "AMateria.h"
+#include "IMateriaSource.hpp"
 
-class Cure {
+class MateriaSource {
 public:
   // Constructors , Copy Constructor, Destructor
-  Cure(void);
-  
-  Cure(Cure const &source);
-  ~Cure(void);
+  MateriaSource(void);
+
+  MateriaSource(MateriaSource const &source);
+  ~MateriaSource(void);
 
   // Overloaded Operators
-  Cure &operator=(Cure const &rhs);
+  MateriaSource &operator=(MateriaSource const &rhs);
 
 private:
 };
-
-#endif // CURE_H //

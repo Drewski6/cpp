@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.h                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 19:31:18 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:15:23 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_H
-#define WRONGCAT_H
+#pragma once
 
-#include "WrongAnimal.h"
+#include "Animal.hpp"
 
-class WrongCat : public WrongAnimal {
+class Cat : public Animal {
 public:
   // Constructors , Copy Constructor, Destructor
-  WrongCat(void);
+  Cat(void);
 
-  WrongCat(WrongCat const &source);
-  ~WrongCat(void);
+  Cat(Cat const &source);
+  ~Cat(void);
 
   // Overloaded Operators
-  WrongCat &operator=(WrongCat const &rhs);
+  Cat &operator=(Cat const &rhs);
 
   // Public Methods
   void makeSound(void) const;
 
 private:
 };
-
-#endif // WRONGCAT_H //

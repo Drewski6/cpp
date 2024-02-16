@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.h                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 16:42:07 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/08 17:47:06 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 19:26:08 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_H
-#define BRAIN_H
+#pragma once
 
-#include <iostream>
-#include <string>
+#include "WrongAnimal.hpp"
 
-class Brain {
+class WrongCat : public WrongAnimal {
 public:
   // Constructors , Copy Constructor, Destructor
-  Brain(void);
-  
-  Brain(Brain const &source);
-  ~Brain(void);
+  WrongCat(void);
+
+  WrongCat(WrongCat const &source);
+  ~WrongCat(void);
 
   // Overloaded Operators
-  Brain &operator=(Brain const &rhs);
-
-  // Public Attributes
-  std::string ideas[100];
+  WrongCat &operator=(WrongCat const &rhs);
 
   // Public Methods
-  std::string &getIdea(int idea_index);
-  void setIdea(int idea_index, std::string idea_content);
+  void makeSound(void) const;
 
 private:
 };
-
-#endif // BRAIN_H //

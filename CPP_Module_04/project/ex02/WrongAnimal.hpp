@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.h                                      :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 15:54:28 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 19:32:04 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:25:35 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_H
-#define WRONGANIMAL_H
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -34,5 +33,3 @@ public:
 protected:
   std::string type;
 };
-
-#endif // WRONGANIMAL_H //

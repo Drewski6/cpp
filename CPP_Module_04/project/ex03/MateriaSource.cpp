@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:28:04 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 15:28:09 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:31:06 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.h"
+#include "MateriaSource.hpp"
 
 // Constructors , Copy Constructor, Destructor
 MateriaSource::MateriaSource(void){};
@@ -29,4 +29,3 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &rhs) {
 // Public Methods
 
 // Private Methods
-

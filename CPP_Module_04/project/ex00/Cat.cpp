@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:30 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/08 18:24:50 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:16:37 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.h"
+#include "Cat.hpp"
 
 // Constructors , Copy Constructor, Destructor
 Cat::Cat(void) : Animal() {

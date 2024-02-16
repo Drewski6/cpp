@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:30 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 14:36:21 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:23:57 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.h"
+#include "Cat.hpp"
 
 // Constructors , Copy Constructor, Destructor
 Cat::Cat(void) : AAnimal() {
@@ -24,8 +24,8 @@ Cat::Cat(Cat const &source) : AAnimal(source) {
   brain = new Brain(*(source.brain));
 };
 
-Cat::~Cat(void) { 
-  std::cout << "Destructor for Cat" << std::endl; 
+Cat::~Cat(void) {
+  std::cout << "Destructor for Cat" << std::endl;
   delete brain;
 };
 
@@ -35,7 +35,7 @@ Cat &Cat::operator=(Cat const &rhs) {
     return (*this);
   // Additional code here if you need a deep copy.
   delete brain;
-  brain =new Brain(*(rhs.brain));
+  brain = new Brain(*(rhs.brain));
   return (*this);
 };
 
@@ -49,4 +49,3 @@ std::string &Cat::getIdea(int idea_index) {
 void Cat::setIdea(int idea_index, std::string idea_content) {
   brain->setIdea(idea_index, idea_content);
 };
-

@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.h                                              :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 15:26:48 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 18:14:45 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/09 15:25:34 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 19:29:15 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_H
-#define ICE_H
+#pragma once
 
-#include "AMateria.h"
+#include <string>
 
-class Ice : public AMateria {
+class ICharacter;
+
+class AMateria {
+protected:
+  // [...]
 public:
   // Constructors , Copy Constructor, Destructor
-  Ice(void);
-  
-  Ice(Ice const &source);
-  ~Ice(void);
+  AMateria(std::string const &type);
+  AMateria(AMateria const &source);
+  ~AMateria(void);
 
   // Overloaded Operators
-  Ice &operator=(Ice const &rhs);
+  AMateria &operator=(AMateria const &rhs);
 
-private:
+  // [...]
+  std::string const &getType() const; // Returns the materia type
+  virtual AMateria *clone() const = 0;
+  virtual void use(ICharacter &target);
 };
-
-#endif // ICE_H //

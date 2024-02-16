@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 15:54:12 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/03 19:32:56 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:24:58 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.h"
+#include "WrongAnimal.hpp"
 
 // Constructors , Copy Constructor, Destructor
 WrongAnimal::WrongAnimal(void) {

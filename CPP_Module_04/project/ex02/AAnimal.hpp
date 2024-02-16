@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.h                                    :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 15:27:57 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 15:28:33 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/02/03 15:54:28 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/02/16 19:23:28 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_H
-#define MATERIASOURCE_H
+#pragma once
 
-#include "IMateriaSource.h"
+#include <iostream>
+#include <string>
 
-class MateriaSource {
+class AAnimal {
 public:
   // Constructors , Copy Constructor, Destructor
-  MateriaSource(void);
-  
-  MateriaSource(MateriaSource const &source);
-  ~MateriaSource(void);
+  AAnimal(void);
+
+  AAnimal(AAnimal const &source);
+  virtual ~AAnimal(void);
 
   // Overloaded Operators
-  MateriaSource &operator=(MateriaSource const &rhs);
+  AAnimal &operator=(AAnimal const &rhs);
 
-private:
+  // Public Methods
+  std::string getType(void) const;
+  virtual void makeSound(void) const = 0;
+
+protected:
+  std::string type;
 };
-
-#endif // MATERIASOURCE_H //

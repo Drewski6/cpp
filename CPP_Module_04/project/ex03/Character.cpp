@@ -6,11 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:25:55 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/09 15:26:04 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:29:20 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.h"
+#include "Character.hpp"
 
 // Constructors , Copy Constructor, Destructor
 Character::Character(void){};
@@ -29,4 +29,3 @@ Character &Character::operator=(Character const &rhs) {
 // Public Methods
 
 // Private Methods
-

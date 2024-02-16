@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.h                                              :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/08 17:46:19 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:19:43 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-#define DOG_H
+#pragma once
 
-#include "Animal.h"
-#include "Brain.h"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Dog : public Animal {
+class Cat : public Animal {
 public:
   // Constructors , Copy Constructor, Destructor
-  Dog(void);
+  Cat(void);
 
-  Dog(Dog const &source);
-  ~Dog(void);
+  Cat(Cat const &source);
+  ~Cat(void);
 
   // Overloaded Operators
-  Dog &operator=(Dog const &rhs);
+  Cat &operator=(Cat const &rhs);
 
   // Public Methods
   void makeSound(void) const;
@@ -33,8 +32,5 @@ public:
   void setIdea(int idea_index, std::string idea_content);
 
 private:
-  // Private Attributes
   Brain *brain;
 };
-
-#endif // DOG_H //

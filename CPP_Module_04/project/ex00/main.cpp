@@ -6,13 +6,13 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/08 18:26:49 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:16:55 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.h"
-#include "Dog.h"
-#include "WrongCat.h"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongCat.hpp"
 #include <iostream>
 
 int main() {
