@@ -6,16 +6,14 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:25:14 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/16 19:29:05 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:35:17 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
 // Constructors , Copy Constructor, Destructor
-AMateria::AMateria(std::string const &type) {
-  // Constructor
-  (void)type;
+AMateria::AMateria(std::string const &type_val) : type(type_val){
 };
 
 AMateria::AMateria(AMateria const &source) { *this = source; };

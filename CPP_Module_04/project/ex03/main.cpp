@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/16 19:30:55 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:50:52 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ int main() {
     // AMateria
     // AMateria mat;
     Ice ice;
+    Ice *newIce = ice.clone();
+
+    delete newIce;
   }
 
   // {
