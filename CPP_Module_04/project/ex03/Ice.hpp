@@ -6,13 +6,14 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:26:48 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/17 15:37:56 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/18 16:46:58 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "AMateria.hpp"
+#include "Character.hpp"
 #include <iostream>
 
 class Ice : public AMateria {
@@ -28,7 +29,7 @@ public:
 
   // Public Methods
   Ice *clone() const;
-  void use(ICharacter& target);
+  void use(ICharacter &target);
 
 private:
 };

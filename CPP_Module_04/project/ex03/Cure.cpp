@@ -6,16 +6,19 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:26:34 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/16 19:29:47 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/19 15:37:24 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
 // Constructors , Copy Constructor, Destructor
-Cure::Cure(void){};
+Cure::Cure(void)
+    : AMateria("cure"){
+          // std::cout << "Cure Constructor." << std::endl;
+      };
 
-Cure::Cure(Cure const &source) { *this = source; };
+Cure::Cure(Cure const &source) : AMateria("cure") { *this = source; };
 Cure::~Cure(void){};
 
 // Overloaded Operators
@@ -27,5 +30,11 @@ Cure &Cure::operator=(Cure const &rhs) {
 };
 
 // Public Methods
+Cure *Cure::clone() const {
+  Cure *retCure = new Cure;
+  return retCure;
+};
 
-// Private Methods
+void Cure::use(ICharacter &target) {
+  std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+};

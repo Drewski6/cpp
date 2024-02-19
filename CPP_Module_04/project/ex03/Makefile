@@ -6,7 +6,7 @@
 #    By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 22:01:03 by dpentlan          #+#    #+#              #
-#    Updated: 2024/02/09 17:14:37 by dpentlan         ###   ########.fr        #
+#    Updated: 2024/02/19 18:53:36 by dpentlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CXX := c++
 SRC_DIR := 
 OBJ_DIR := 
 H_DIR := .
-FLAGS := -g -std=c++98 -Wall -Wextra -Werror
+FLAGS := -g -std=c++98 -Wall -Wextra -Werror -MMD
 
 ### PRETTY COLORS ###
 RED:=\033[31;1;4m
@@ -35,6 +35,7 @@ SRCS = main.cpp \
 			 MateriaSource.cpp \
 
 OBJS := $(patsubst %.cpp,$(OBJ_DIR)%.o,$(SRCS))
+DEPS := $(patsubst %.cpp,$(OBJ_DIR)%.d,$(SRCS))
 
 ### RULES ###
 
@@ -52,6 +53,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 clean:
 	@printf "$(RED)|=:=:=:=:=:=:=:= CLEANING =:=:=:=:=:=:=:=|$(NOCOLOR)\n"
 	rm -f $(OBJS)
+	rm -f $(DEPS)
 
 fclean: clean
 	rm -f $(NAME)
@@ -66,6 +68,8 @@ andrun: clear re
 
 valgrind: clear re
 	@valgrind ./$(NAME)
+
+-include $(DEPS)
 
 .PHONY: all clean fclean re andrun
 
