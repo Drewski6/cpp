@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:25:55 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/19 22:23:06 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/20 18:54:32 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ std::string const &Character::getName() const { return (_name); };
 void Character::equip(AMateria *m) {
   if (m) {
     for (int i = 0; i < 4; i++) {
-      if (!_materias[i]) {
+      if (_materias[i] == NULL) {
+        // std::cout << "Inserting materia at slot " << i << std::endl;
         _materias[i] = m;
         return;
       }
@@ -67,13 +68,14 @@ void Character::equip(AMateria *m) {
 
 // unequiped items cannot be deleted per subject
 void Character::unequip(int idx) {
-  if (idx >= 0 && idx <= 4 && _materias[idx])
+  if (idx >= 0 && idx < 4 && _materias[idx])
     _materias[idx] = NULL;
 };
 
 // Subject does not say if a used item should be deleted or not. I do here.
 void Character::use(int idx, ICharacter &target) {
-  if (idx >= 0 && idx <= 4 && _materias[idx]) {
+  if (idx >= 0 && idx < 4 && _materias[idx]) {
+    // std::cout << "Using materia at slot " << idx << std::endl;
     _materias[idx]->use(target);
     delete _materias[idx];
     _materias[idx] = NULL;
