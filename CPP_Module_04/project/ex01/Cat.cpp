@@ -6,16 +6,15 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:30 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/16 19:19:22 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:20:26 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 // Constructors , Copy Constructor, Destructor
-Cat::Cat(void) : Animal() {
+Cat::Cat(void) : Animal("Cat") {
   std::cout << "Constructor for Cat" << std::endl;
-  Animal::type = "Cat";
   brain = new Brain();
 };
 
@@ -31,9 +30,9 @@ Cat::~Cat(void) {
 
 // Overloaded Operators
 Cat &Cat::operator=(Cat const &rhs) {
+  std::cout << "Overloaded operator= for Cat" << std::endl;
   if (this == &rhs)
     return (*this);
-  // Additional code here if you need a deep copy.
   delete brain;
   brain = new Brain(*(rhs.brain));
   return (*this);

@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/16 19:19:43 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/20 14:31:12 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Cat : public Animal {
 public:
   // Constructors , Copy Constructor, Destructor
   Cat(void);
-
   Cat(Cat const &source);
   ~Cat(void);
 

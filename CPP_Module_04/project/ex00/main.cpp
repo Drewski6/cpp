@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/20 13:41:29 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:15:10 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ int main() {
     const Animal *j = new Dog();
     const Animal *i = new Cat();
 
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
+    std::cout << "Type: " << j->getType() << std::endl;
+    std::cout << "Type: " << i->getType() << std::endl;
     i->makeSound(); // will output the cat sound!
     j->makeSound();
     meta->makeSound();
@@ -96,10 +96,10 @@ int main() {
     const Animal *i = new Cat();
     const Cat *j = new Cat();
 
-    std::cout << i->getType() << " " << std::endl;
+    std::cout << "Type: " << i->getType() << std::endl;
     i->makeSound();
 
-    std::cout << j->getType() << " " << std::endl;
+    std::cout << "Type: " << j->getType() << std::endl;
     j->makeSound();
 
     delete i;
@@ -115,10 +115,10 @@ int main() {
     const WrongCat *j = new WrongCat();
 
     // Wrong makeSound is printed because it not virtual in the parent.
-    std::cout << i->getType() << " " << std::endl;
+    std::cout << "Type: " << i->getType() << std::endl;
     i->makeSound();
 
-    std::cout << j->getType() << " " << std::endl;
+    std::cout << "Type: " << j->getType() << std::endl;
     j->makeSound();
 
     // Note that the destructors are wrong too! 

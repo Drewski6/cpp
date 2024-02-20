@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/16 19:24:41 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/20 15:45:55 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ public:
   void setIdea(int idea_index, std::string idea_content);
 
 private:
-  // Private Attributes
   Brain *brain;
 };

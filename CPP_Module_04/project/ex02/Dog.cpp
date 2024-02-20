@@ -6,16 +6,15 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:30 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/16 19:24:24 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:31:18 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 // Constructors , Copy Constructor, Destructor
-Dog::Dog(void) : AAnimal() {
+Dog::Dog(void) : AAnimal("Dog") {
   std::cout << "Constructor for Dog" << std::endl;
-  AAnimal::type = "Dog";
   brain = new Brain();
 };
 
@@ -30,6 +29,7 @@ Dog::~Dog(void) {
 };
 
 // Overloaded Operators
+// Deep copy of brain
 Dog &Dog::operator=(Dog const &rhs) {
   std::cout << "Overloaded operator= for Dog" << std::endl;
   if (this == &rhs)
@@ -49,5 +49,3 @@ std::string &Dog::getIdea(int idea_index) {
 void Dog::setIdea(int idea_index, std::string idea_content) {
   brain->setIdea(idea_index, idea_content);
 };
-
-// Private Methods

@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 15:54:12 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/16 19:17:00 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:12:32 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 // Constructors , Copy Constructor, Destructor
 WrongAnimal::WrongAnimal(void) {
-  std::cout << "Constructor for WrongAnimal" << std::endl;
+  std::cout << "Default Constructor for WrongAnimal" << std::endl;
+};
+
+WrongAnimal::WrongAnimal(std::string type_val) : type(type_val) {
+  std::cout << "Argument Constructor for WrongAnimal" << std::endl;
 };
 
 WrongAnimal::WrongAnimal(WrongAnimal const &source) {

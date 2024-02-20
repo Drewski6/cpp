@@ -6,21 +6,21 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:30 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/16 19:19:57 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:20:18 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 // Constructors , Copy Constructor, Destructor
-Dog::Dog(void) : Animal() {
+Dog::Dog(void) : Animal("Dog") {
   std::cout << "Constructor for Dog" << std::endl;
-  Animal::type = "Dog";
   brain = new Brain();
 };
 
 Dog::Dog(Dog const &source) : Animal(source) {
   std::cout << "Copy Constructor for Dog" << std::endl;
+  // calls the 
   brain = new Brain(*(source.brain));
 };
 
