@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 15:54:28 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/16 19:14:51 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/20 13:25:09 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Animal {
 public:
   // Constructors , Copy Constructor, Destructor
   Animal(void);
-
+  Animal(std::string type_val);
   Animal(Animal const &source);
   virtual ~Animal(void);
 

@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:24:19 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/02/16 19:15:38 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/02/20 13:27:16 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ class Dog : public Animal {
 public:
   // Constructors , Copy Constructor, Destructor
   Dog(void);
-
   Dog(Dog const &source);
   ~Dog(void);
 
