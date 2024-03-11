@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/11 09:31:56 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/11 09:40:57 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,9 @@ int main() {
     } catch (const Form::GradeTooLowException &ex) {
       std::cout << ex.what() << std::endl;
     }
+
+    // Check status of form and ensure signed status.
+    std::cout << twenty_nine_C << std::endl;
   }
 
   {
@@ -117,6 +120,9 @@ int main() {
     } catch (const Form::GradeTooLowException &ex) {
       std::cout << ex.what() << std::endl;
     }
+
+    // Check status of form and ensure signed status.
+    std::cout << twenty_nine_C << std::endl;
   }
 
   {
@@ -129,10 +135,29 @@ int main() {
     Form thirty_three("Form33", 45, 41);
 
     jonny.signForm(thirty_three);
+
+    // Check status of form and ensure signed status.
+    std::cout << thirty_three << std::endl;
   }
 
   {
-    std::cout << "\n===== Test 9 : Bad Bureaucrat signForm Test =====\n"
+    std::cout
+        << "\n===== Test 9 : Another Good Bureaucrat signForm Test =====\n"
+        << std::endl;
+    // This test tests the new signForm method in the Bureaucrat Class
+
+    Bureaucrat mr_bill("Mr.Bill", 45);
+
+    Form forty_five("Form45", 45, 41);
+
+    mr_bill.signForm(forty_five);
+
+    // Check status of form and ensure signed status.
+    std::cout << forty_five << std::endl;
+  }
+
+  {
+    std::cout << "\n===== Test 10 : Bad Bureaucrat signForm Test =====\n"
               << std::endl;
     // This test tests the new signForm method in the Bureaucrat Class
 
@@ -141,6 +166,9 @@ int main() {
     Form forty_five("Form45", 45, 41);
 
     juan.signForm(forty_five);
+
+    // Check status of form and ensure signed status.
+    std::cout << forty_five << std::endl;
   }
 
   return (0);
