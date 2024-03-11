@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 12:15:02 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/10 14:09:28 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/11 09:22:26 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <exception>
 #include <sstream>
 #include <string>
+
+class Bureaucrat;
 
 class Form {
 public:

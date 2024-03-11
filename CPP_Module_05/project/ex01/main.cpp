@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/10 21:55:15 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/11 09:31:56 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int main() {
   }
 
   {
-    std::cout << "\n===== Test 6 : beSigned Test =====\n" << std::endl;
+    std::cout << "\n===== Test 6 : Good beSigned Test =====\n" << std::endl;
     // Tests Bureaucrats signing Forms
 
     Bureaucrat billy("Billy", 3);
@@ -100,6 +100,47 @@ int main() {
     } catch (const Form::GradeTooLowException &ex) {
       std::cout << ex.what() << std::endl;
     }
+  }
+
+  {
+    std::cout << "\n===== Test 7 : Bad beSigned Test =====\n" << std::endl;
+    // Tests Bureaucrats signing Forms
+
+    Bureaucrat billy("Billy", 89);
+
+    Form twenty_nine_C("29C", 3, 2);
+
+    try {
+      twenty_nine_C.beSigned(billy);
+      std::cout << billy.getName() << " signed " << twenty_nine_C.getName()
+                << std::endl;
+    } catch (const Form::GradeTooLowException &ex) {
+      std::cout << ex.what() << std::endl;
+    }
+  }
+
+  {
+    std::cout << "\n===== Test 8 : Good Bureaucrat signForm Test =====\n"
+              << std::endl;
+    // This test tests the new signForm method in the Bureaucrat Class
+
+    Bureaucrat jonny("Jonny", 21);
+
+    Form thirty_three("Form33", 45, 41);
+
+    jonny.signForm(thirty_three);
+  }
+
+  {
+    std::cout << "\n===== Test 9 : Bad Bureaucrat signForm Test =====\n"
+              << std::endl;
+    // This test tests the new signForm method in the Bureaucrat Class
+
+    Bureaucrat juan("Juan", 50);
+
+    Form forty_five("Form45", 45, 41);
+
+    juan.signForm(forty_five);
   }
 
   return (0);

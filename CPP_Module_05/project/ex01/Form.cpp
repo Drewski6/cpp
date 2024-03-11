@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 12:15:11 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/10 21:53:44 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/11 09:09:33 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int Form::getGradeReqToExec() const { return _gradeReqToExec; };
 void Form::beSigned(const Bureaucrat &b) {
   if (b.getGrade() > _gradeReqToSign)
     throw GradeTooLowException();
-  return;
+  _signedStatus = true;
 };
 
 // Exception Class Implementations
