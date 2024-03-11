@@ -6,23 +6,23 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 01:52:13 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/10 10:33:44 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/10 21:40:54 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 // Constructors , Copy Constructor, Destructor
-Bureaucrat::Bureaucrat(const std::string name_val, int grade_val) : _name(name_val) {
-  if (grade_val <= 0)
+Bureaucrat::Bureaucrat(const std::string name_val, int grade_val)
+    : _name(name_val), _grade(grade_val) {
+  if (_grade <= 0)
     throw GradeTooHighException();
-  if (grade_val > 150)
+  if (_grade > 150)
     throw GradeTooLowException();
-  _grade = grade_val;
 };
 
 Bureaucrat::Bureaucrat(Bureaucrat const &source) { *this = source; };
-Bureaucrat::~Bureaucrat(void) {};
+Bureaucrat::~Bureaucrat(void){};
 
 // Overloaded Operators
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs) {
@@ -33,13 +33,9 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs) {
 };
 
 // Public Methods
-std::string Bureaucrat::getName(void) const {
-  return (_name);
-};
+std::string Bureaucrat::getName(void) const { return (_name); };
 
-unsigned int Bureaucrat::getGrade(void) const {
-  return (_grade);
-};
+int Bureaucrat::getGrade(void) const { return (_grade); };
 
 void Bureaucrat::incGrade(void) {
   if (_grade - 1 <= 0)
@@ -53,18 +49,20 @@ void Bureaucrat::decGrade(void) {
   _grade = _grade + 1;
 };
 
-Bureaucrat::GradeTooHighException::GradeTooHighException() {};
-Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {};
+// Exception Class Implementations
+Bureaucrat::GradeTooHighException::GradeTooHighException(){};
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw(){};
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
   return ("Grade Too High");
 }
 
-Bureaucrat::GradeTooLowException::GradeTooLowException() {};
-Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {};
+Bureaucrat::GradeTooLowException::GradeTooLowException(){};
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw(){};
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
   return ("Grade Too Low");
 }
 
+// Overloaded Stream Insertion Operator
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b) {
   std::stringstream ss;
   ss << b.getName() << ", bureaucrat grade " << b.getGrade();

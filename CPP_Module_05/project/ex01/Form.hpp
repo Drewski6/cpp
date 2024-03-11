@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 01:50:52 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/10 21:39:55 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/03/10 12:15:02 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/03/10 14:09:28 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include "Bureaucrat.hpp"
 #include <exception>
 #include <sstream>
 #include <string>
 
-class Bureaucrat {
+class Form {
 public:
   // Constructors , Copy Constructor, Destructor
-  Bureaucrat(const std::string name_val = "NoName", int grade_val = (150));
-  Bureaucrat(Bureaucrat const &source);
-  ~Bureaucrat(void);
+  Form(std::string const name_val, int _gradeReqToSign, int _gradeReqToExec);
+  Form(Form const &source);
+  ~Form(void);
 
   // Overloaded Operators
-  Bureaucrat &operator=(Bureaucrat const &rhs);
+  Form &operator=(Form const &rhs);
 
   // Public Methods
-  std::string getName(void) const;
-  int getGrade(void) const;
-  void incGrade(void);
-  void decGrade(void);
+  std::string getName() const;
+  bool getSignedStatus() const;
+  int getGradeReqToSign() const;
+  int getGradeReqToExec() const;
+  void beSigned(const Bureaucrat &b);
 
-  // Built in Exception Classes
+  // Exception Classes
   class GradeTooHighException : public std::exception {
   public:
     GradeTooHighException();
@@ -48,9 +50,11 @@ public:
   };
 
 private:
-  const std::string _name;
-  unsigned int _grade;
+  std::string const _name;
+  bool _signedStatus;
+  int const _gradeReqToSign;
+  int const _gradeReqToExec;
 };
 
 // Overloaded Stream Insertion Operator
-std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);
+std::ostream &operator<<(std::ostream &os, const Form &b);
