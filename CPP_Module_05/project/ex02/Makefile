@@ -6,11 +6,11 @@
 #    By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 22:01:03 by dpentlan          #+#    #+#              #
-#    Updated: 2024/02/01 12:47:15 by dpentlan         ###   ########.fr        #
+#    Updated: 2024/03/11 11:23:29 by dpentlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = unnamed_project
+NAME = more_forms
 
 ### SETTINGS ###
 CXX := c++
@@ -28,6 +28,11 @@ NOCOLOR:=\033[0m
 ### FILES ###
 
 SRCS = main.cpp \
+			 Bureaucrat.cpp \
+			 AForm.cpp \
+			 ShrubberyCreationForm.cpp \
+			 RobotomyRequestForm.cpp \
+			 PresidentialPardonForm.cpp \
 
 OBJS := $(patsubst %.cpp,$(OBJ_DIR)%.o,$(SRCS))
 
