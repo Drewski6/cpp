@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/14 12:41:41 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:18:30 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 int main(int argc, char **argv) {
   // main
-  if (argc != 2) {
-    std::cout << "Error: Invalid number of arguments.\n"
+  if (argc != 2 || *(argv[1]) == 0) {
+    std::cout << "Error: Invalid arguments.\n"
               << "Usage: ./convert [char, int, float, or double]" << std::endl;
     return (1);
   }

@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:09:14 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/15 09:32:32 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/15 13:06:52 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,29 +87,57 @@ e_type ScalarConverter::_detectType(std::string inputStr) {
     }
   }
 
-  // float/double test
+  // float test
 
   {
-    if (inputStr.find(".") != std::string::npos &&
-        inputStr.find(".") == inputStr.rfind(".")) {
-      std::string set = "0123456789.f";
+    if (inputStr.at(inputStr.length() - 1) == 'f') {
+      std::cout << "possible float" << std::endl;
+      std::string set = "0123456789.-f";
       if (inputStr.find_first_not_of(set) != std::string::npos) {
         std::cout << "found char not in set" << std::endl;
         return ERROR;
       }
-      if (inputStr.find("f") != std::string::npos) {
-        if (inputStr.at(inputStr.length() - 1) == 'f' &&
-            inputStr.find("f") == inputStr.rfind("f")) {
-          return FLOAT;
-        } else {
-          std::cout << "f but not only one" << std::endl;
-          return ERROR;
-        }
-      } else {
-        return DOUBLE;
-      }
+      std::stringstream ss_f_num;
+      ss_f_num << atof(inputStr.c_str());
+
+      if (inputStr.substr(0, inputStr.length() - 2) == ss_f_num.str())
+        std::cout << "inputStr and ss_f_num are equal!" << std::endl;
+      std::cout << ss_f_num.str() << std::endl;
+      // std::cout << f_num << std::endl;
     }
   }
+  // Stopping for now. The problem I'm having is that I cant figure out a way to
+  // determin if a number is float, double or error. And I think the main reason
+  // for this is because I havent figured exactly what should be considered an
+  // error and what should not based on the subject. It's a little ambiguous and
+  // I'm thinking I need to be strict, but that would make the functions long,
+  // compicated and not elegant. So, I'll come back later.
+
+  // {
+  //   if (inputStr.find(".") != std::string::npos &&
+  //       inputStr.find(".") == inputStr.rfind(".")) {
+  //     std::string set = "0123456789.f-";
+  //     if (inputStr.find_first_not_of(set) != std::string::npos) {
+  //       std::cout << "found char not in set" << std::endl;
+  //       return ERROR;
+  //     }
+  //     if (inputStr.find("f") != std::string::npos) {
+  //       if (inputStr.at(inputStr.length() - 1) == 'f' &&
+  //           inputStr.find("f") == inputStr.rfind("f")) {
+  //         return FLOAT;
+  //       } else {
+  //         std::cout << "f but not only one" << std::endl;
+  //         return ERROR;
+  //       }
+  //     } else {
+  //       return DOUBLE;
+  //     }
+  //   }
+  // }
+
+  // double test
+
+  {}
 
   std::cout << "end of func" << std::endl;
   return ERROR;
