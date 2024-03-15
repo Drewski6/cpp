@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:09:14 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/15 09:08:24 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/15 09:32:32 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,9 @@ e_type ScalarConverter::_detectType(std::string inputStr) {
   // int test
 
   {
-    int number;
-
-    number = atoi(inputStr.c_str());
-
     std::stringstream ss_number;
-    ss_number << number;
+
+    ss_number << atoi(inputStr.c_str());
 
     if (inputStr == ss_number.str()) {
       return INT;
@@ -95,42 +92,25 @@ e_type ScalarConverter::_detectType(std::string inputStr) {
   {
     if (inputStr.find(".") != std::string::npos &&
         inputStr.find(".") == inputStr.rfind(".")) {
-
-      std::cout << "only one . found" << std::endl;
-      std::cout << "either double or float" << std::endl;
-
-      int significant_digits = inputStr.length() - (inputStr.find(".") + 1);
-      if (significant_digits > 16)
-        significant_digits = 16;
-
-      if (inputStr.at(inputStr.length() - 1) == 'f') {
-        std::cout << "possible float Found!" << std::endl;
-        significant_digits--;
-        if (significant_digits > 7)
-          significant_digits = 7;
-
-        float number;
-
-        number = std::atof(inputStr.c_str());
-
-        std::cout << std::fixed << std::setprecision(significant_digits);
-        std::cout << inputStr << std::endl;
-        std::cout << "float number: " << number << std::endl;
-        std::cout << "sizeof float: " << sizeof(float) * 8 << std::endl;
-        return FLOAT;
+      std::string set = "0123456789.f";
+      if (inputStr.find_first_not_of(set) != std::string::npos) {
+        std::cout << "found char not in set" << std::endl;
+        return ERROR;
+      }
+      if (inputStr.find("f") != std::string::npos) {
+        if (inputStr.at(inputStr.length() - 1) == 'f' &&
+            inputStr.find("f") == inputStr.rfind("f")) {
+          return FLOAT;
+        } else {
+          std::cout << "f but not only one" << std::endl;
+          return ERROR;
+        }
       } else {
-        double number;
-
-        number = std::atof(inputStr.c_str());
-
-        std::cout << std::fixed << std::setprecision(significant_digits);
-        std::cout << significant_digits << std::endl;
-        std::cout << inputStr << std::endl;
-        std::cout << "Double number: " << number << std::endl;
         return DOUBLE;
       }
     }
   }
 
+  std::cout << "end of func" << std::endl;
   return ERROR;
 }
