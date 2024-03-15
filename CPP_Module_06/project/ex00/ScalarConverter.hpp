@@ -6,14 +6,13 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:09:27 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/14 16:33:27 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/14 20:49:49 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <cstdlib>
-#include <iomanip>
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -23,7 +22,9 @@ enum e_type {
   INT,
   FLOAT,
   DOUBLE,
-  NONE,
+  INF,
+  NAN,
+  ERROR,
 };
 
 class ScalarConverter {

@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:09:14 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/14 18:06:34 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/15 09:08:24 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,74 +46,91 @@ void ScalarConverter::convert(std::string inputStr) {
     std::cout << "DOUBLE" << std::endl;
     break;
   case (4):
-    std::cout << "NONE" << std::endl;
+    std::cout << "INF" << std::endl;
+    break;
+  case (5):
+    std::cout << "NAN" << std::endl;
     break;
   default:
-    std::cout << "DEFAULT" << std::endl;
+    std::cout << "ERROR" << std::endl;
     break;
   }
 };
 
 e_type ScalarConverter::_detectType(std::string inputStr) {
 
+  // inf test
+
+  if (inputStr == "-inff" || inputStr == "+inff" || inputStr == "-inf" ||
+      inputStr == "+inf")
+    return INF;
+
+  // nan test
+
+  if (inputStr == "nan" || inputStr == "nanf")
+    return NAN;
+
   // char test
 
-  {
-    if (inputStr.length() == 1 &&
-        ((inputStr.c_str()[0] >= 0 && inputStr.c_str()[0] <= 47) ||
-         (inputStr.c_str()[0] >= 58))) {
-      return CHAR;
-    }
-  }
+  if (inputStr.length() == 1 && std::isdigit(inputStr.at(0)) != true)
+    return CHAR;
 
   // int test
 
   {
-    int int_number;
+    int number;
 
-    int_number = atoi(inputStr.c_str());
+    number = atoi(inputStr.c_str());
 
-    std::stringstream int_ss_number;
-    int_ss_number << int_number;
+    std::stringstream ss_number;
+    ss_number << number;
 
-    if (inputStr == int_ss_number.str()) {
+    if (inputStr == ss_number.str()) {
       return INT;
     }
   }
 
-  // float test
+  // float/double test
 
   {
-    double f_number;
+    if (inputStr.find(".") != std::string::npos &&
+        inputStr.find(".") == inputStr.rfind(".")) {
 
-    f_number = atof(inputStr.c_str());
+      std::cout << "only one . found" << std::endl;
+      std::cout << "either double or float" << std::endl;
 
-    std::stringstream ss_number;
-    ss_number << f_number;
+      int significant_digits = inputStr.length() - (inputStr.find(".") + 1);
+      if (significant_digits > 16)
+        significant_digits = 16;
 
-    std::cout << ss_number.str() << std::endl;
-    std::cout << f_number << std::endl;
+      if (inputStr.at(inputStr.length() - 1) == 'f') {
+        std::cout << "possible float Found!" << std::endl;
+        significant_digits--;
+        if (significant_digits > 7)
+          significant_digits = 7;
 
-    if (inputStr.substr(0, inputStr.length() - 1) == ss_number.str() &&
-        inputStr.at(inputStr.length() - 1) == 'f') {
-      return FLOAT;
+        float number;
+
+        number = std::atof(inputStr.c_str());
+
+        std::cout << std::fixed << std::setprecision(significant_digits);
+        std::cout << inputStr << std::endl;
+        std::cout << "float number: " << number << std::endl;
+        std::cout << "sizeof float: " << sizeof(float) * 8 << std::endl;
+        return FLOAT;
+      } else {
+        double number;
+
+        number = std::atof(inputStr.c_str());
+
+        std::cout << std::fixed << std::setprecision(significant_digits);
+        std::cout << significant_digits << std::endl;
+        std::cout << inputStr << std::endl;
+        std::cout << "Double number: " << number << std::endl;
+        return DOUBLE;
+      }
     }
   }
 
-  // double test
-
-  {
-    double d_number;
-
-    d_number = atof(inputStr.c_str());
-
-    std::stringstream ss_number;
-    ss_number << d_number;
-
-    if (inputStr == ss_number.str()) {
-      return DOUBLE;
-    }
-  }
-
-  return NONE;
+  return ERROR;
 }
