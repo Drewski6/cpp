@@ -6,12 +6,11 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:09:14 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/15 13:06:52 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/15 19:25:16 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include <iomanip>
 
 // Constructors , Copy Constructor, Destructor
 ScalarConverter::ScalarConverter(void){};

@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/15 17:37:27 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/15 19:21:32 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-#include <typeinfo>
 
 Base *generate(void) {
   std::srand(std::time(NULL));
@@ -40,28 +39,32 @@ Base *generate(void) {
 }
 
 void identify(Base *p) {
-  if (dynamic_cast<A *>(p))
+  if (dynamic_cast<A *>(p) != NULL)
     std::cout << "ptr: class is of type: A" << std::endl;
-  else if (dynamic_cast<B *>(p))
+  else if (dynamic_cast<B *>(p) != NULL)
     std::cout << "ptr: class is of type: B" << std::endl;
-  else if (dynamic_cast<C *>(p))
+  else if (dynamic_cast<C *>(p) != NULL)
     std::cout << "ptr: class is of type: C" << std::endl;
-  return;
+  else
+    std::cout << "ptr: error: not derived from Base" << std::endl;
 };
 
 void identify(Base &p) {
   try {
-    dynamic_cast<A &>(p);
+    A &retA = dynamic_cast<A &>(p);
     std::cout << "ref: class is of type: A" << std::endl;
-  } catch (const std::bad_cast &ex) {
+    (void)retA;
+  } catch (const std::exception &ex) {
     try {
-      dynamic_cast<B &>(p);
+      B &retB = dynamic_cast<B &>(p);
       std::cout << "ref: class is of type: B" << std::endl;
-    } catch (const std::bad_cast &ex) {
+      (void)retB;
+    } catch (const std::exception &ex) {
       try {
-        dynamic_cast<C &>(p);
+        C &retC = dynamic_cast<C &>(p);
         std::cout << "ref: class is of type: C" << std::endl;
-      } catch (const std::bad_cast &ex) {
+        (void)retC;
+      } catch (const std::exception &ex) {
         std::cout << ex.what() << std::endl;
       }
     }
