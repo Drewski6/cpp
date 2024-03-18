@@ -6,11 +6,11 @@
 #    By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 22:01:03 by dpentlan          #+#    #+#              #
-#    Updated: 2024/02/01 12:47:15 by dpentlan         ###   ########.fr        #
+#    Updated: 2024/03/17 13:42:23 by dpentlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = unnamed_project
+NAME = iter
 
 ### SETTINGS ###
 CXX := c++

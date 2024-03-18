@@ -35,8 +35,10 @@
 */*/*/serialization
 */*/*/real_type
 # module 07
-
+*/*/*/start
+*/*/*/iter
+*/*/*/array
 # module 08
 
 # module 09
-
+*/*/*/btc

@@ -38,11 +38,10 @@ printf "===== int tests =====\n"
 printf "===== float tests =====\n"
 ./convert 98.98f
 ./convert 98.f
-./convert 23f
 ./convert 0.0f
 ./convert -4.2f
 ./convert 4.2f
-./convert 4-.2f
+./convert 23.f
 
 printf "===== double tests =====\n"
 
@@ -52,3 +51,8 @@ printf "===== error tests =====\n"
 ./convert -2147483649
 # error float
 ./convert 98.98.98f
+./convert 1.2ff
+./convert 1.b2f
+./convert 23f
+./convert 4-.2f
+

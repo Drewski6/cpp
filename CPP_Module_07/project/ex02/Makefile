@@ -6,11 +6,11 @@
 #    By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 22:01:03 by dpentlan          #+#    #+#              #
-#    Updated: 2024/02/01 12:47:15 by dpentlan         ###   ########.fr        #
+#    Updated: 2024/03/17 14:23:25 by dpentlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = unnamed_project
+NAME = array
 
 ### SETTINGS ###
 CXX := c++
