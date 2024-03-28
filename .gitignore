@@ -39,6 +39,10 @@
 */*/*/iter
 */*/*/array
 # module 08
-
+*/*/*/easy_find
+*/*/*/span
+*/*/*/mutated_abomination
 # module 09
 */*/*/btc
+*/*/*/RPN
+*/*/*/PmergeMe
