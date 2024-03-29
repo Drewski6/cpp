@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:35:09 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/28 21:28:19 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/29 14:26:44 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 #include <iterator>
 #include <vector>
 #include <iostream>
+#include <algorithm>
+#include <set>
+#include <functional>
 
 class Span {
 public:
@@ -48,12 +51,21 @@ public:
   };
 
   // Templated Functions
-  // (implementations allowed for templated functions per subject)
+  // (implementations allowed for templated functions per the subject)
   template <typename T>
   void addRange(typename T::iterator begin, typename T::iterator last) {
     if (std::distance(begin, last) + _nums.size() > _maxVecSize)
       throw OutOfSpaceException();
     _nums.insert(_nums.end(), begin, last);
+  };
+
+  // Functor for shortestSpan
+  class ShortestSpanPredicate {
+  public:
+    ShortestSpanPredicate(int& shortest);
+    bool operator()(int a, int b) const;
+  private:
+    int &_shortest;
   };
 
 private:
