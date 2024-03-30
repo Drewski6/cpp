@@ -6,16 +6,13 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 14:34:12 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/17 19:18:38 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/03/30 08:26:25 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Constructors , Copy Constructor, Destructor
 template <typename T>
-Array<T>::Array(void)
-    : _array(new T[0]), _size(0){
-
-                        };
+Array<T>::Array(void) : _array(new T[0]), _size(0){};
 
 template <typename T>
 Array<T>::Array(unsigned int n) : _array(new T[n]), _size(n){};
