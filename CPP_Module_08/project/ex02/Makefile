@@ -6,7 +6,7 @@
 #    By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 22:01:03 by dpentlan          #+#    #+#              #
-#    Updated: 2024/03/30 10:52:40 by dpentlan         ###   ########.fr        #
+#    Updated: 2024/04/01 12:18:25 by dpentlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CXX := c++
 SRC_DIR := 
 OBJ_DIR := 
 H_DIR := .
-FLAGS := -g -std=c++98 -Wall -Wextra -Werror
+FLAGS := -g -Wall -Wextra -Werror -std=c++98
 
 ### PRETTY COLORS ###
 RED:=\033[31;1;4m

@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/04/01 10:42:32 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:47:11 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,27 @@
 #include <iostream>
 #include <list>
 #include <stack>
+#include <algorithm>
+#include <string>
+
+// Helper for printing stack for evaluation.
+void printStack(MutantStack<int> M) {
+  std::cout << "[ ";
+  for (MutantStack<int>::iterator it = M.begin(); it != M.end(); it++) {
+      std::cout << *it << " ";
+  }
+  std::cout << "]" << std::endl;
+}
+
+// cmp for use with std::max_element and std::min_element
+bool cmp(int a, int b) {
+  return a < b;
+}
+
+// for use with std::transform
+int times_two(int a) {
+  return a * 2;
+}
 
 int main() {
   // main
@@ -156,19 +177,119 @@ int main() {
   {
     std::cout << "\n===== Test 5 : Doubles =====\n" << std::endl;
     // Doubles //
+    MutantStack<double> mstack;
+
+    std::cout << "Is mstack empty? " << (mstack.empty() ? "true" : "false")
+              << std::endl;
+
+    std::cout << "\nPushing doubles to stack\n" << std::endl;
+    mstack.push(111.111);
+    mstack.push(222.222);
+    mstack.push(333.333);
+    mstack.push(444.444);
+    mstack.push(555.555);
+
+    std::cout << "Is mstack empty? " << (mstack.empty() ? "true" : "false")
+              << std::endl;
+
+    std::cout << "mstack size: " << mstack.size() << std::endl;
+    std::cout << "mstack top : " << mstack.top() << std::endl;
+
+    std::cout << "\nPopping stack\n" << std::endl;
+    mstack.pop();
+
+    std::cout << "mstack size: " << mstack.size() << std::endl;
+    std::cout << "mstack top : " << mstack.top() << std::endl;
   }
 
   {
     std::cout << "\n===== Test 6 : Strings =====\n" << std::endl;
     // Strings //
+    MutantStack<std::string> mstack;
+
+    std::cout << "Is mstack empty? " << (mstack.empty() ? "true" : "false")
+              << std::endl;
+
+    std::cout << "\nPushing ints to stack\n" << std::endl;
+    mstack.push("oh");
+    mstack.push("my");
+    mstack.push("gosh!");
+    mstack.push("It");
+    mstack.push("Works!!!");
+
+    std::cout << "Is mstack empty? " << (mstack.empty() ? "true" : "false")
+              << std::endl;
+
+    std::cout << "mstack size: " << mstack.size() << std::endl;
+    std::cout << "mstack top : " << mstack.top() << std::endl;
+
+    std::cout << "\nPopping stack\n" << std::endl;
+    mstack.pop();
+
+    std::cout << "mstack size: " << mstack.size() << std::endl;
+    std::cout << "mstack top : " << mstack.top() << std::endl;
   }
 
   {
-    std::cout << "\n===== Test 7 : Algorithms =====\n" << std::endl;
     // What's the point of iterators if they dont work with algorithms //
 
     // test with std::count, std::max_element, std::min_element,
     // and std::transform to create a new stack
+    
+    MutantStack<int> mstack;
+    // one 1
+    mstack.push(1);
+    // two 2s
+    mstack.push(2);
+    mstack.push(2);
+    // three 3s
+    mstack.push(3);
+    mstack.push(3);
+    mstack.push(3);
+    // four 4s
+    mstack.push(4);
+    mstack.push(4);
+    mstack.push(4);
+    mstack.push(4);
+    // five 5s
+    mstack.push(5);
+    mstack.push(5);
+    mstack.push(5);
+    mstack.push(5);
+    mstack.push(5);
+
+
+    std::cout << "\n===== Test 7 : std::count algorithm =====\n" << std::endl;
+    int count = std::count(mstack.begin(), mstack.end(), 5);
+    std::cout << "mstack: ";
+    printStack(mstack);
+    std::cout << "Number of 5s: " << count << std::endl;
+
+    std::cout << "\n===== Test 8 : std::max_element algorithm =====\n" << std::endl;
+    MutantStack<int>::iterator it_max = std::max_element(mstack.begin(), mstack.end(), cmp);
+    std::cout << "mstack: ";
+    printStack(mstack);
+    std::cout << "Max element value: " << *it_max << std::endl;
+
+    std::cout << "\n===== Test 9 : std::min_element algorithm =====\n" << std::endl;
+    MutantStack<int>::iterator it_min = std::min_element(mstack.begin(), mstack.end(), cmp);
+    std::cout << "mstack: ";
+    printStack(mstack);
+    std::cout << "Min element value: " << *it_min << std::endl;
+
+    std::cout << "\n===== Test 10 : std::transform algorithm =====\n" << std::endl;
+    MutantStack<int> ustack;
+    
+    // need to push all 0s to create space in underlying container.
+    for (size_t i = 0; i < mstack.size(); i++) {
+      ustack.push(0);
+    }
+
+    std::transform(mstack.begin(), mstack.end(), ustack.begin(), times_two);
+    std::cout << "mstack: ";
+    printStack(mstack);
+    std::cout << "ustack: ";
+    printStack(mstack);
   }
 
   return (0);

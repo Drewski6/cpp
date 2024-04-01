@@ -6,13 +6,15 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 15:12:14 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/04/01 11:00:49 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:45:04 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <stack>
+#include <iostream>
+#include <string>
 
 template <typename T>
 class MutantStack : public std::stack<T> {
@@ -34,3 +36,4 @@ public:
   iterator crbegin() { return std::stack<T>::c.crbegin(); }
   iterator crend() { return std::stack<T>::c.crend(); }
 };
+
