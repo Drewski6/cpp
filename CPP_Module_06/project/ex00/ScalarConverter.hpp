@@ -6,40 +6,29 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:09:27 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/14 20:49:49 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/04/01 16:21:51 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <cstdlib>
+#include <errno.h>
+#include <float.h>
+#include <iomanip>
 #include <iostream>
-#include <sstream>
+#include <limits.h>
 #include <string>
-
-enum e_type {
-  CHAR,
-  INT,
-  FLOAT,
-  DOUBLE,
-  INF,
-  NAN,
-  ERROR,
-};
 
 class ScalarConverter {
 public:
-  // Public Methods
   static void convert(std::string inputStr);
 
+  // Need to make Constructors, Destructor, and operator= private to make
+  // ScalarConverter non-instatiable like the subject asks.
 private:
-  // To ensure ScalarConverter is not instanciable, we make it's constructor
-  // private.
   ScalarConverter(void);
   ScalarConverter(ScalarConverter const &source);
   ~ScalarConverter(void);
   ScalarConverter &operator=(ScalarConverter const &rhs);
-
-  // Private Methods
-  static e_type _detectType(std::string inputStr);
 };

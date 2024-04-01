@@ -6,111 +6,107 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:09:14 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/15 21:25:23 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/04/01 16:34:49 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-// Constructors , Copy Constructor, Destructor
-ScalarConverter::ScalarConverter(void){};
-ScalarConverter::ScalarConverter(ScalarConverter const &source) {
-  *this = source;
-};
-ScalarConverter::~ScalarConverter(void){};
+// Yes I put everything in one large function....
 
-// Overloaded Operators
-ScalarConverter &ScalarConverter::operator=(ScalarConverter const &rhs) {
-  if (this == &rhs)
-    return (*this);
-  return (*this);
-};
+void ScalarConverter::convert(std::string str) {
 
-void ScalarConverter::convert(std::string inputStr) {
-  e_type inputType;
-
-  inputType = _detectType(inputStr);
-
-  switch (inputType) {
-  case (0):
-    std::cout << "CHAR" << std::endl;
-    break;
-  case (1):
-    std::cout << "INT" << std::endl;
-    break;
-  case (2):
-    std::cout << "FLOAT" << std::endl;
-    break;
-  case (3):
-    std::cout << "DOUBLE" << std::endl;
-    break;
-  case (4):
-    std::cout << "INF" << std::endl;
-    break;
-  case (5):
-    std::cout << "NAN" << std::endl;
-    break;
-  default:
-    std::cout << "ERROR" << std::endl;
-    break;
+  // Easy stuff first
+  if (str == "nan" || str == "nanf") {
+    std::cout << "char: impossible" << std::endl;
+    std::cout << "int: impossible" << std::endl;
+    std::cout << "float: nanf" << std::endl;
+    std::cout << "double: nan" << std::endl;
+    return;
+  } else if (str == "+inf" || str == "+inff") {
+    std::cout << "char: impossible" << std::endl;
+    std::cout << "int: impossible" << std::endl;
+    std::cout << "float: +inff" << std::endl;
+    std::cout << "double: +inf" << std::endl;
+    return;
+  } else if (str == "-inf" || str == "-inff") {
+    std::cout << "char: impossible" << std::endl;
+    std::cout << "int: impossible" << std::endl;
+    std::cout << "float: -inff" << std::endl;
+    std::cout << "double: -inf" << std::endl;
+    return;
   }
-};
 
-e_type ScalarConverter::_detectType(std::string inputStr) {
+  // If input is char
+  if (str.size() == 1) {
+    char c = *str.c_str();
+    std::cout << "char: '" << c << "'" << std::endl;
+    std::cout << "int: " << static_cast<int>(c) << std::endl;
+    std::cout << "float: " << static_cast<float>(c) << "f" << std::endl;
+    std::cout << "double: " << static_cast<double>(c) << std::endl;
+    return;
+  }
 
-  // inf test
+  // set precision for float and double printing
+  int precision = 1;
+  size_t decimalPos = str.find('.');
+  if (decimalPos != std::string::npos) {
+    precision = str.length() - decimalPos - 1;
+  }
+  if (str.find('f') != std::string::npos)
+    precision--;
 
-  if (inputStr == "-inff" || inputStr == "+inff" || inputStr == "-inf" ||
-      inputStr == "+inf")
-    return INF;
+  std::cout << "precision: " << precision << std::endl;
+  std::cout << std::fixed << std::setprecision(precision);
 
-  // nan test
+  // convert string to double, then cast to other types.
+  char *end = 0;
+  double d_num = std::strtod(str.c_str(), &end);
 
-  if (inputStr == "nan" || inputStr == "nanf")
-    return NAN;
+  // errno set to ERANGE if overflow/underflow occurs. strtod err.
+  if (errno == ERANGE) {
+    std::cout << "char: impossible" << std::endl;
+    std::cout << "int: impossible" << std::endl;
+    std::cout << "float: impossible" << std::endl;
+    std::cout << "double: impossible" << std::endl;
+    return;
+  }
 
-  // char test
+  if (*end == '\0' || *end == 'f') {
 
-  if (inputStr.length() == 1 && std::isdigit(inputStr.at(0)) != true)
-    return CHAR;
+    // Char
+    if (d_num > CHAR_MAX || d_num < CHAR_MIN)
+      std::cout << "char: impossible " << std::endl;
+    else if (d_num > 126 || d_num < 32)
+      std::cout << "char: Non displayable" << std::endl;
+    else
+      std::cout << "char: '" << static_cast<char>(d_num) << "'" << std::endl;
 
-  // int test
-
-  {
-    std::stringstream ss_number;
-
-    ss_number << atoi(inputStr.c_str());
-
-    if (inputStr == ss_number.str()) {
-      return INT;
+    // Int
+    if (d_num > INT_MAX || d_num < INT_MIN) {
+      std::cout << "int: impossible" << std::endl;
+    } else {
+      std::cout << "int: " << static_cast<int>(d_num) << std::endl;
     }
-  }
 
-  // float/double test
-
-  {
-    if (inputStr.find(".") != std::string::npos &&
-        inputStr.find(".") == inputStr.rfind(".")) {
-      std::string set = "0123456789.f-";
-      if (inputStr.find_first_not_of(set) != std::string::npos) {
-        return ERROR;
-      }
-      int neg_log = inputStr.find("-");
-      if (neg_loc != std::string::npos) {
-        return ERROR;
-      }
-      if (inputStr.find("f") != std::string::npos) {
-        if (inputStr.at(inputStr.length() - 1) == 'f' &&
-            inputStr.find("f") == inputStr.rfind("f")) {
-          return FLOAT;
-        } else {
-          return ERROR;
-        }
-      } else {
-        return DOUBLE;
-      }
+    // Float
+    if (d_num > FLT_MAX || d_num < -FLT_MAX) {
+      std::cout << "float: impossible" << std::endl;
+    } else {
+      std::cout << "float: " << static_cast<float>(d_num) << "f" << std::endl;
     }
+
+    // Double
+    std::cout << "double: " << d_num << std::endl;
+
+    return;
   }
 
-  return ERROR;
-}
+  // If nothing has printed up to this point. Catch all condition.
+  std::cout << "DEBUG: CATCH ALL" << std::endl;
+  std::cout << "char: impossible" << std::endl;
+  std::cout << "int: impossible" << std::endl;
+  std::cout << "float: impossible" << std::endl;
+  std::cout << "double: impossible" << std::endl;
+  return;
+};
