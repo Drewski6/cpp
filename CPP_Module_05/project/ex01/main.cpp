@@ -31,7 +31,7 @@ int main() {
 
   {
     std::cout << "\n===== Test 2 : Bad Init Form =====\n" << std::endl;
-    // This test Initializes a Form class with bad GradeRegToSign (too high)
+    // This test Initializes a Form class with bad GradeReqToSign (too high)
 
     try {
       Form twenty_nine_C("29C", 0, 28);
@@ -45,7 +45,7 @@ int main() {
 
   {
     std::cout << "\n===== Test 3 : Bad Init Form =====\n" << std::endl;
-    // This test Initializes a Form class with bad GradeRegToExec (too high)
+    // This test Initializes a Form class with bad GradeReqToExec (too high)
 
     try {
       Form twenty_nine_C("29C", 29, 0);
@@ -59,7 +59,7 @@ int main() {
 
   {
     std::cout << "\n===== Test 4 : Bad Init Form =====\n" << std::endl;
-    // This test Initializes a Form class with bad GradeRegToSign (too low)
+    // This test Initializes a Form class with bad GradeReqToSign (too low)
 
     try {
       Form twenty_nine_C("29C", 151, 28);
@@ -73,7 +73,7 @@ int main() {
 
   {
     std::cout << "\n===== Test 5 : Bad Init Form =====\n" << std::endl;
-    // This test Initializes a Form class with bad GradeRegToExec (too low)
+    // This test Initializes a Form class with bad GradeReqToExec (too low)
 
     try {
       Form twenty_nine_C("29C", 29, 151);
