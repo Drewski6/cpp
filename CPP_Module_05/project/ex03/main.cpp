@@ -32,7 +32,7 @@ int main() {
     Bureaucrat bob("Bob", 130);
     AForm *bobsForm;
 
-    bobsForm = intern.makeForm("ShrubberyCreationForm", "Billy");
+    bobsForm = intern.makeForm("shrubbery creation", "Billy");
     if (bobsForm != NULL) {
       bob.signForm(*bobsForm);
       bob.executeForm(*bobsForm);
@@ -50,7 +50,7 @@ int main() {
     Bureaucrat bob("Bob", 140);
     AForm *bobsForm;
 
-    bobsForm = intern.makeForm("ShrubberyCreationForm", "Billy");
+    bobsForm = intern.makeForm("shrubbery creation", "Billy");
     if (bobsForm != NULL) {
       bob.signForm(*bobsForm);
       bob.executeForm(*bobsForm);
@@ -70,7 +70,7 @@ int main() {
     Bureaucrat bob("Bob", 30);
     AForm *bobsForm;
 
-    bobsForm = intern.makeForm("RobotomyRequestForm", "Billy");
+    bobsForm = intern.makeForm("robotomy request", "Billy");
     if (bobsForm != NULL) {
       bob.signForm(*bobsForm);
       bob.executeForm(*bobsForm);
@@ -88,7 +88,7 @@ int main() {
     Bureaucrat bob("Bob", 50);
     AForm *bobsForm;
 
-    bobsForm = intern.makeForm("RobotomyRequestForm", "Billy");
+    bobsForm = intern.makeForm("robotomy request", "Billy");
     if (bobsForm != NULL) {
       bob.signForm(*bobsForm);
       bob.executeForm(*bobsForm);
@@ -105,10 +105,10 @@ int main() {
     // Test Presidential with good parameters.
 
     Intern intern;
-    Bureaucrat bob("Bob", 30);
+    Bureaucrat bob("Bob", 3);
     AForm *bobsForm;
 
-    bobsForm = intern.makeForm("PresidentialPardonForm", "Billy");
+    bobsForm = intern.makeForm("presidential pardon", "Billy");
     if (bobsForm != NULL) {
       bob.signForm(*bobsForm);
       bob.executeForm(*bobsForm);
@@ -126,7 +126,7 @@ int main() {
     Bureaucrat bob("Bob", 50);
     AForm *bobsForm;
 
-    bobsForm = intern.makeForm("PresidentialPardonForm", "Billy");
+    bobsForm = intern.makeForm("presidential pardon", "Billy");
     if (bobsForm != NULL) {
       bob.signForm(*bobsForm);
       bob.executeForm(*bobsForm);
@@ -146,7 +146,7 @@ int main() {
     Bureaucrat bob("Bob", 30);
     AForm *bobsForm;
 
-    bobsForm = intern.makeForm("DoesNotExistForm", "Billy");
+    bobsForm = intern.makeForm("DoesNotExist form", "Billy");
     if (bobsForm != NULL) {
       bob.signForm(*bobsForm);
       bob.executeForm(*bobsForm);

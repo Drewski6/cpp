@@ -30,8 +30,8 @@ Intern &Intern::operator=(Intern const &rhs) {
 AForm *Intern::makeForm(std::string formName, std::string targetName) const {
   AForm *newForm = NULL;
   int index = -1;
-  std::string forms[3] = {"ShrubberyCreationForm", "RobotomyRequestForm",
-                          "PresidentialPardonForm"};
+  std::string forms[3] = {"shrubbery creation", "robotomy request",
+                          "presidential pardon"};
 
   for (int i = 0; i < 3; i++) {
     if (formName == forms[i]) {
@@ -43,15 +43,15 @@ AForm *Intern::makeForm(std::string formName, std::string targetName) const {
   switch (index) {
   case (0):
     newForm = new ShrubberyCreationForm(targetName);
-    std::cout << "Intern creates " << formName << std::endl;
+    std::cout << "Intern creates " << formName << " form" << std::endl;
     break;
   case (1):
     newForm = new RobotomyRequestForm(targetName);
-    std::cout << "Intern creates " << formName << std::endl;
+    std::cout << "Intern creates " << formName << " form" << std::endl;
     break;
   case (2):
     newForm = new PresidentialPardonForm(targetName);
-    std::cout << "Intern creates " << formName << std::endl;
+    std::cout << "Intern creates " << formName << " form" << std::endl;
     break;
   default:
     std::cout << "Intern could not make form " << formName
