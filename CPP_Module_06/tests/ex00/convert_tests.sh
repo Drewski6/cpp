@@ -62,6 +62,10 @@ printf "\n"
 printf "\n"
 ./convert 23.f
 printf "\n"
+./convert 8.0f
+printf "\n"
+./convert 88.0f
+printf "\n"
 
 printf "===== double tests =====\n"
 ./convert 4.2
@@ -71,6 +75,8 @@ printf "\n"
 ./convert 0.0
 printf "\n"
 ./convert 23.5
+printf "\n"
+./convert 95.0
 printf "\n"
 
 printf "===== error tests =====\n"

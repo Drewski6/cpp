@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:09:14 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/05 20:20:42 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/06 16:38:03 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ void ScalarConverter::convert(std::string str) {
   // If input is char (excluding digits because subject wants 0 as an int)
   if (str.size() == 1 && (*str.c_str() < '0' || *str.c_str() > '9')) {
     char c = *str.c_str();
-    std::cout << "char: '" << c << "'" << std::endl;
+    if (c > 126 || c < 32)
+      std::cout << "char: Non displayable" << std::endl;
+    else
+      std::cout << "char: '" << c << "'" << std::endl;
     std::cout << "int: " << static_cast<int>(c) << std::endl;
     std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
     std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
