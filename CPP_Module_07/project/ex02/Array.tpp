@@ -53,7 +53,7 @@ template <typename T> T &Array<T>::operator[](unsigned int index) {
 
 template <typename T> unsigned int Array<T>::size() { return (_size); }
 
-template <typename T> void Array<T>::print() {
+template <typename T> void Array<T>::print() const {
   // Obviously this isn't the best way to print contents of an array,
   // but it works for testing.
   for (unsigned int i = 0; i < _size; i++) {

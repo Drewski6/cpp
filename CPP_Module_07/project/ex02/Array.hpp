@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 14:24:48 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/17 18:03:56 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:43:54 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 
   // Public methods
   unsigned int size();
-  void print();
+  void print() const;
 
   // Exception Classes
   class OutOfBoundsException : public std::exception {
