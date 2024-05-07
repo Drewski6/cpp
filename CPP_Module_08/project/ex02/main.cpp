@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/04/01 13:47:11 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:49:55 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -289,7 +289,7 @@ int main() {
     std::cout << "mstack: ";
     printStack(mstack);
     std::cout << "ustack: ";
-    printStack(mstack);
+    printStack(ustack);
   }
 
   return (0);

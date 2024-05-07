@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/28 17:08:46 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/07 20:58:42 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main() {
 
     // Error handling. Iterator equivalent of returing NULL.
     if (it == v1.end())
-      std::cout << "Item not be found. Returned address (v1.end()): " << &(*it)
+      std::cout << "Item could not be found. Returned address (v1.end()): " << &(*it)
                 << std::endl;
     else
       std::cout << "Item found with value: " << *it << " at address: " << &(*it)
@@ -67,7 +67,7 @@ int main() {
 
     // Error handling. Iterator equivalent of returing NULL.
     if (it == v1.end())
-      std::cout << "Item not be found. Returned address (v1.end()): " << &(*it)
+      std::cout << "Item could not be found. Returned address (v1.end()): " << &(*it)
                 << std::endl;
     else
       std::cout << "Item found with value: " << *it << " at address: " << &(*it)
@@ -91,7 +91,7 @@ int main() {
 
     // Error handling. Iterator equivalent of returing NULL.
     if (it == d1.end())
-      std::cout << "Item not be found. Returned address (d1.end()): " << &(*it)
+      std::cout << "Item could not be found. Returned address (d1.end()): " << &(*it)
                 << std::endl;
     else
       std::cout << "Item found with value: " << *it << " at address: " << &(*it)
@@ -115,7 +115,7 @@ int main() {
 
     // Error handling. Iterator equivalent of returing NULL.
     if (it == d1.end())
-      std::cout << "Item not be found. Returned address (d1.end()): " << &(*it)
+      std::cout << "Item could not be found. Returned address (d1.end()): " << &(*it)
                 << std::endl;
     else
       std::cout << "Item found with value: " << *it << " at address: " << &(*it)
@@ -139,7 +139,7 @@ int main() {
 
     // Error handling. Iterator equivalent of returing NULL.
     if (it == l1.end())
-      std::cout << "Item not be found. Returned address (l1.end()): " << &(*it)
+      std::cout << "Item could not be found. Returned address (l1.end()): " << &(*it)
                 << std::endl;
     else
       std::cout << "Item found with value: " << *it << " at address: " << &(*it)
@@ -163,7 +163,7 @@ int main() {
 
     // Error handling. Iterator equivalent of returing NULL.
     if (it == l1.end())
-      std::cout << "Item not be found. Returned address (l1.end()): " << &(*it)
+      std::cout << "Item could not be found. Returned address (l1.end()): " << &(*it)
                 << std::endl;
     else
       std::cout << "Item found with value: " << *it << " at address: " << &(*it)
