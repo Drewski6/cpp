@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/17 14:22:12 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/06 18:05:48 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main() {
 
     int int_array[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    ::iter(int_array, 10, &::print);
+    iter(int_array, 10, &print);
     std::cout << std::endl;
   }
 
@@ -31,7 +31,7 @@ int main() {
 
     char char_array[27] = "abcdefghijklmnopqrstuvwxyz";
 
-    ::iter(char_array, 26, &::print);
+    iter(char_array, 26, &print);
     std::cout << std::endl;
   }
 
@@ -41,7 +41,7 @@ int main() {
 
     double d_array[7] = {0.0, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6};
 
-    ::iter(d_array, 7, &::print);
+    iter(d_array, 7, &print);
     std::cout << std::endl;
   }
 
@@ -52,10 +52,10 @@ int main() {
 
     int int_array[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    ::iter(int_array, 10, &::print);
+    iter(int_array, 10, &print);
     std::cout << "\nAdding one with addOne" << std::endl;
-    ::iter(int_array, 10, &::addOne);
-    ::iter(int_array, 10, &::print);
+    iter(int_array, 10, &addOne);
+    iter(int_array, 10, &print);
     std::cout << std::endl;
   }
 
@@ -67,10 +67,10 @@ int main() {
     double double_array[10] = {0.0, 1.1, 2.2, 3.3, 4.4,
                                5.5, 6.6, 7.7, 8.8, 9.9};
 
-    ::iter(double_array, 10, &::print);
+    iter(double_array, 10, &print);
     std::cout << "\nAdding one with addOne" << std::endl;
-    ::iter(double_array, 10, &::addOne);
-    ::iter(double_array, 10, &::print);
+    iter(double_array, 10, &addOne);
+    iter(double_array, 10, &print);
     std::cout << std::endl;
   }
 

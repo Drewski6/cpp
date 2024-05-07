@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/17 19:38:00 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:34:53 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,11 +145,12 @@ int main() {
     // Negative size
 
     // Negative numbers of unsigned ints roll over.
-    // Will create valgrind warning.
+    // Will create valgrind warning because it's too large.
     // We're requesting (2147483647 - 5) * 4 bytes of memory (~8.5 GB).
     // but still runs.
-    Array<float> my_array(-5);
-    std::cout << "negative number test" << std::endl;
+
+    // Array<float> my_array(-5);
+    // std::cout << "negative number test" << std::endl;
   }
 
   return (0);

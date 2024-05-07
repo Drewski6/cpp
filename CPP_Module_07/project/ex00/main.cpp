@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/03/17 13:39:40 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:05:19 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,33 @@ int main() {
     // c = chaine2, d = chaine1
     // min(c, d) = chaine1
     // max(c, d) = chaine2
+  }
+
+  {
+    std::cout << "\n===== Test 6 : int (equal) =====\n" << std::endl;
+
+    int a = 42;
+    int b = 42;
+
+    std::cout << "int: pre-swap : a=" << a << ", b=" << b << std::endl;
+    swap(a, b);
+    std::cout << "int: post-swap: a=" << a << ", b=" << b << std::endl;
+    std::cout << "int: min: " << min(a, b) << std::endl;
+    std::cout << "int: max: " << max(a, b) << std::endl;
+  }
+
+  {
+    std::cout << "\n===== Test 7 : different types =====\n" << std::endl;
+    std::cout << "Most of this test is commented out because it causes compiler errors." << std::endl;
+
+    int a = 42;
+    double b = 42.0;
+
+    std::cout << "int/double: pre-swap : a=" << a << ", b=" << b << std::endl;
+    // swap(a, b);  // Causes compiler errors
+    std::cout << "int/double: post-swap: a=" << a << ", b=" << b << std::endl;
+    // std::cout << "int: min: " << min(a, b) << std::endl; // Causes compiler errors
+    // std::cout << "int: max: " << max(a, b) << std::endl; // Causes compiler errors
   }
 
   return (0);

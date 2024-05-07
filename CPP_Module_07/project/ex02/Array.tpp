@@ -11,13 +11,15 @@
 /* ************************************************************************** */
 
 // Constructors , Copy Constructor, Destructor
-template <typename T>
-Array<T>::Array(void) : _array(new T[0]), _size(0){};
+template <typename T> Array<T>::Array(void) : _array(new T[0]), _size(0){};
 
 template <typename T>
 Array<T>::Array(unsigned int n) : _array(new T[n]), _size(n){};
 
-template <typename T> Array<T>::Array(Array const &source) { *this = source; };
+template <typename T>
+Array<T>::Array(Array const &source) : _array(new T[0]), _size(0) {
+  *this = source;
+};
 
 template <typename T> Array<T>::~Array(void) { delete[] _array; };
 
@@ -32,9 +34,12 @@ const char *Array<T>::OutOfBoundsException::what() const throw() {
 
 // Overloaded Operators
 template <typename T> Array<T> &Array<T>::operator=(Array const &rhs) {
+  std::cout << "operator=" << std::endl;
   if (this == &rhs)
     return (*this);
-  _array = new T[_size];
+  _size = rhs._size;
+  delete[] this->_array;
+  this->_array = new T[_size];
   for (unsigned int i = 0; i < _size; i++) {
     (this->_array)[i] = (rhs._array)[i];
   }
