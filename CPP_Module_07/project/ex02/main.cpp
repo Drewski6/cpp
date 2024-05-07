@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/07 15:34:53 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:55:39 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ int main() {
     // Testing sizeof the class and the total array size when default
     // constructor is used.
 
+    int size = 0;
     Array<int> my_array;
 
-    std::cout << "sizeof class: " << sizeof(my_array) << " bits" << std::endl;
+    std::cout << "sizeof class: " << sizeof(my_array[0]) * size << " bytes"
+              << std::endl;
     std::cout << "len of array: " << my_array.size() << std::endl;
   }
 
@@ -33,9 +35,11 @@ int main() {
     // Testing size of the class and the total array size when
     // arg constructor is used.
 
-    Array<int> my_array(3);
+    int size = 3;
+    Array<int> my_array(size);
 
-    std::cout << "sizeof class: " << sizeof(my_array) << " bits" << std::endl;
+    std::cout << "sizeof class: " << sizeof(my_array[0]) * size << " bytes"
+              << std::endl;
     std::cout << "len of array: " << my_array.size() << std::endl;
   }
 
@@ -47,7 +51,7 @@ int main() {
     std::cout << "len of array: " << my_array.size() << std::endl;
 
     try {
-      my_array[5]; // out of bounds
+      my_array[5]; // out of bounds. Last element at index 4.
     } catch (const std::exception &ex) {
       std::cout << ex.what() << std::endl;
     }

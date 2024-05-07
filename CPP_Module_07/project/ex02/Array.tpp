@@ -34,7 +34,6 @@ const char *Array<T>::OutOfBoundsException::what() const throw() {
 
 // Overloaded Operators
 template <typename T> Array<T> &Array<T>::operator=(Array const &rhs) {
-  std::cout << "operator=" << std::endl;
   if (this == &rhs)
     return (*this);
   _size = rhs._size;
