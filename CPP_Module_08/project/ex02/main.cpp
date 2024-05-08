@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/07 16:49:55 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/08 22:03:23 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 #include <stack>
 #include <algorithm>
 #include <string>
+#include <vector>
 
 // Helper for printing stack for evaluation.
-void printStack(MutantStack<int> M) {
+template <typename T, typename C>
+void printStack(MutantStack<T, C> M) {
   std::cout << "[ ";
-  for (MutantStack<int>::iterator it = M.begin(); it != M.end(); it++) {
+  for (typename MutantStack<T, C>::iterator it = M.begin(); it != M.end(); it++) {
       std::cout << *it << " ";
   }
   std::cout << "]" << std::endl;
@@ -290,6 +292,36 @@ int main() {
     printStack(mstack);
     std::cout << "ustack: ";
     printStack(ustack);
+  }
+
+  {
+    std::cout << "\n===== Test 11 : MutantStack with underlying std::list =====\n" << std::endl;
+
+    MutantStack<int, std::list<int> > mstack;
+
+    mstack.push(1);
+    mstack.push(2);
+    mstack.push(3);
+    mstack.push(4);
+    mstack.push(5);
+
+    std::cout << "mstack: ";
+    printStack(mstack);
+  }
+
+  {
+    std::cout << "\n===== Test 12 : MutantStack with underlying std::vector =====\n" << std::endl;
+
+    MutantStack<int, std::vector<int> > mstack;
+
+    mstack.push(1);
+    mstack.push(2);
+    mstack.push(3);
+    mstack.push(4);
+    mstack.push(5);
+
+    std::cout << "mstack: ";
+    printStack(mstack);
   }
 
   return (0);
