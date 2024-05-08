@@ -11,15 +11,18 @@
 /* ************************************************************************** */
 
 // Constructors , Copy Constructor, Destructor
-template <typename T, typename C> MutantStack<T, C>::MutantStack(void){};
+template <typename T, typename C>
+MutantStack<T, C>::MutantStack(void){};
 
+template <typename T, typename C>
+MutantStack<T, C>::MutantStack(MutantStack const &source) { *this = source; };
 
-template <typename T, typename C> MutantStack<T, C>::MutantStack(MutantStack const &source) { *this = source; };
-
-template <typename T, typename C> MutantStack<T, C>::~MutantStack(void){};
+template <typename T, typename C>
+MutantStack<T, C>::~MutantStack(void){};
 
 // Overloaded Operators
-template <typename T, typename C> MutantStack<T, C> &MutantStack<T, C>::operator=(MutantStack const &rhs) {
+template <typename T, typename C>
+MutantStack<T, C> &MutantStack<T, C>::operator=(MutantStack const &rhs) {
   if (this == &rhs)
     return (*this);
   this->c = rhs.c;
