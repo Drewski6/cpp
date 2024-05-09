@@ -174,5 +174,29 @@ int main() {
 
   // NOTE: No tests for std::array or std::forward_list because C++98 only.
 
+  {
+    std::cout << "\n===== Test 6 : BAD List Search Doubles =====\n" << std::endl;
+
+    std::list<double> l1;
+    l1.push_back(0.1);
+    l1.push_back(1.1);
+    l1.push_back(2.2);
+    l1.push_back(3.3);
+    l1.push_back(4.4);
+
+    // Use easyfind and save result as it.
+    std::list<double>::iterator it = easyfind(l1, 3);
+
+    // Error handling. Iterator equivalent of returing NULL.
+    if (it == l1.end())
+      std::cout << "Item could not be found. Returned address (l1.end()): " << &(*it)
+                << std::endl;
+    else
+      std::cout << "Item found with value: " << *it << " at address: " << &(*it)
+                << std::endl;
+
+    printAddresses(l1);
+  }
+
   return (0);
 }

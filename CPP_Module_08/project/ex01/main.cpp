@@ -97,6 +97,10 @@ int main() {
   }
 
   {
+    
+  }
+
+  {
     std::cout << "\n===== Test 5 : GOOD longestSpan =====" << std::endl;
     // GOOD LongestSpan //
 

@@ -54,9 +54,9 @@ public:
   // (implementations allowed for templated functions per the subject)
   template <typename T>
   void addRange(typename T::iterator begin, typename T::iterator last) {
-    if (std::distance(begin, last) + _nums.size() > _maxVecSize)
+    if (std::distance(begin, last) + _numsVec.size() > _maxVecSize)
       throw OutOfSpaceException();
-    _nums.insert(_nums.end(), begin, last);
+    _numsVec.insert(_numsVec.end(), begin, last);
   };
 
   // Functor for shortestSpan
@@ -69,7 +69,7 @@ public:
   };
 
 private:
-  std::vector<int> _nums;
+  std::vector<int> _numsVec;
   unsigned int _maxVecSize;
 };
 
