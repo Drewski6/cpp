@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 09:41:11 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/10 12:51:53 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/11 13:16:21 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <algorithm>
 #include <iostream>
+#include <stack>
 
 class RPN {
 public:
@@ -29,7 +30,10 @@ public:
 
   // Public Methods
   std::string getInput();
+  void parseInput();
+  int evaluate();
 
+  // Exception Classes
   class InvalidFormException : public std::exception {
   public:
     InvalidFormException();
@@ -37,6 +41,30 @@ public:
     virtual const char *what() const throw();
   };
 
+  class StackTooSmallException : public std::exception {
+  public:
+    StackTooSmallException();
+    virtual ~StackTooSmallException() throw();
+    virtual const char *what() const throw();
+  };
+
+  class NotEnoughOperatorsException : public std::exception {
+  public:
+    NotEnoughOperatorsException();
+    virtual ~NotEnoughOperatorsException() throw();
+    virtual const char *what() const throw();
+  };
+
+  // Functor for VerifyNoDoubleDigitsPred
+  class VerifyNoDoubleDigitsPred {
+  public:
+    VerifyNoDoubleDigitsPred();
+    bool operator()(int a, int b) const;
+  };
+
 private:
   std::string _input;
+  std::stack<int> _stack;
+
+  void _applyOperator(char c);
 };

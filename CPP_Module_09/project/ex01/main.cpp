@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/10 12:50:38 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/11 13:30:35 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main(int argc, char **argv) {
   // main
   if (argc != 2) {
-    std::cout << "Error" << std::endl;
+    std::cout << "Error: wrong number of arguments." << std::endl;
     return (1);
   }
 
@@ -25,7 +25,8 @@ int main(int argc, char **argv) {
 
   try {
     RPN rpn(input_str);
-    std::cout << rpn.getInput() << std::endl;
+    rpn.parseInput();
+    std::cout << rpn.evaluate() << std::endl;
   } catch (std::exception & ex) {
     std::cout << ex.what() << std::endl;
   }
