@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 18:32:17 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/11 23:38:09 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/12 11:15:15 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,12 @@ void BitcoinExchange::dBImport() {
 };
 
 double BitcoinExchange::valueLookup(std::string lookup) {
+  // O(log n) time complexity
   std::map<std::string, double>::iterator it = _map.lower_bound(lookup);
-  if (it == _map.begin())
+  // If iterator at beginning but not equal to begin string, error
+  if (it == _map.begin() && it->first != lookup)
     throw DateTooEarlyException();
+  // Get the closest lower date if not exact match
   if (it->first != lookup)
     it--;
   return it->second;

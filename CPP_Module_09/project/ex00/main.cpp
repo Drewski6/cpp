@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/11 23:43:19 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/12 11:12:00 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int main() {
     std::cout << ex.what() << std::endl;
   }
 
-  std::string strArr[4] = {"2000-01-01", "2018-01-01", "2019-01-01",
-                           "2044-01-01"};
+  std::string strArr[] = {"2000-01-01", "2009-01-02", "2018-01-01",
+                          "2019-01-01", "2044-01-01"};
 
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < 5; i++) {
     try {
       std::cout << btc.valueLookup(strArr[i]) << std::endl;
     } catch (std::exception &ex) {
