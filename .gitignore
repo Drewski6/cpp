@@ -46,6 +46,7 @@
 # module 09
 */*/*/btc
 */*/*/data.csv
+*/*/*/input.txt
 */*/*/RPN
 */*/*/PmergeMe
 */scratch/*

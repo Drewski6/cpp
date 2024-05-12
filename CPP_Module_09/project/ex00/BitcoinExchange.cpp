@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 18:32:17 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/12 11:15:15 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/12 19:22:21 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ BitcoinExchange::~BitcoinExchange(void){};
 BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rhs) {
   if (this == &rhs)
     return (*this);
-  // Additional code here if you need a deep copy.
   return (*this);
 };
 
@@ -38,8 +37,6 @@ void BitcoinExchange::dBImport() {
   if (dBFile.is_open() != true) {
     throw DBImportException();
   }
-
-  // std::cout << "reading in " << _dBFileName << std::endl;
 
   std::string line;
   std::string date;
@@ -60,7 +57,16 @@ void BitcoinExchange::dBImport() {
   dBFile.close();
 };
 
-double BitcoinExchange::valueLookup(std::string lookup) {
+std::string BitcoinExchange::evaluateOutput(std::string &inputStr) {
+  std::stringstream ss;
+  double value = _inputParse(inputStr);
+
+  ss << inputStr.substr(0, 10) << " => " << value << " = "
+     << _valueLookup(inputStr.substr(0, 10)) * value;
+  return (ss.str());
+};
+
+double BitcoinExchange::_valueLookup(std::string lookup) {
   // O(log n) time complexity
   std::map<std::string, double>::iterator it = _map.lower_bound(lookup);
   // If iterator at beginning but not equal to begin string, error
@@ -71,6 +77,82 @@ double BitcoinExchange::valueLookup(std::string lookup) {
     it--;
   return it->second;
 };
+
+// NOT FINISHED
+double BitcoinExchange::_inputParse(std::string inputStr) {
+  std::stringstream ss;
+  std::string date_str;
+  std::string sep_str;
+  std::string value_str;
+  double value;
+  char *end = 0;
+
+  // First check size. Date size = 10, seperator size = 3, value must be at
+  // least 1.
+  if (inputStr.size() < 14)
+    throw BadInputException(inputStr);
+
+  // Error checking for Date
+  date_str = inputStr.substr(0, 10);
+  if (!_isValidDate(date_str))
+    throw BadInputException(inputStr);
+
+  // Error checking for seperator
+  sep_str = inputStr.substr(10, 3);
+  if (sep_str != " | ")
+    throw BadInputException(inputStr);
+
+  // Error checking for Value
+  value_str = inputStr.substr(13);
+  value = std::strtod(value_str.c_str(), &end);
+  ss << value;
+  if (ss.str() != value_str)
+    throw BadInputException(inputStr);
+  if (value < 0)
+    throw ValueNotPositiveException();
+  if (value > 1000)
+    throw ValueTooLargeException();
+
+  return (value);
+};
+
+bool BitcoinExchange::_isValidDate(std::string dateStr) {
+  // Check length of the string
+  if (dateStr.length() != 10)
+    return false;
+  // Check format
+  if (dateStr[4] != '-' || dateStr[7] != '-')
+    return false;
+  // Check if year, month, and day are numerical
+  for (int i = 0; i < 10; ++i) {
+    if (i == 4 || i == 7)
+      continue;
+    if (!isdigit(dateStr[i]))
+      return false;
+  }
+  // Extract year, month, and day
+  std::istringstream iss(dateStr);
+  int year, month, day;
+  char dash;
+  iss >> year >> dash >> month >> dash >> day;
+  // Check range of year, month, and day
+  if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31)
+    return false;
+  // Check for valid number of days in month
+  if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+    return false;
+  if (month == 2) {
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+      if (day > 29)
+        return false;
+    } else {
+      if (day > 28)
+        return false;
+    }
+  }
+
+  return true;
+}
 
 // Exception Classes
 BitcoinExchange::DBImportException::DBImportException(){};
@@ -83,4 +165,26 @@ BitcoinExchange::DateTooEarlyException::DateTooEarlyException(){};
 BitcoinExchange::DateTooEarlyException::~DateTooEarlyException() throw(){};
 const char *BitcoinExchange::DateTooEarlyException::what() const throw() {
   return ("Error: date selected is before any recorded prices.");
+}
+
+BitcoinExchange::BadInputException::BadInputException(std::string str_val)
+    : _str() {
+  _str = "Error: bad input => " + str_val;
+};
+BitcoinExchange::BadInputException::~BadInputException() throw(){};
+const char *BitcoinExchange::BadInputException::what() const throw() {
+  return (_str.c_str());
+}
+
+BitcoinExchange::ValueTooLargeException::ValueTooLargeException(){};
+BitcoinExchange::ValueTooLargeException::~ValueTooLargeException() throw(){};
+const char *BitcoinExchange::ValueTooLargeException::what() const throw() {
+  return ("Error: too large a number.");
+}
+
+BitcoinExchange::ValueNotPositiveException::ValueNotPositiveException(){};
+BitcoinExchange::ValueNotPositiveException::
+    ~ValueNotPositiveException() throw(){};
+const char *BitcoinExchange::ValueNotPositiveException::what() const throw() {
+  return ("Error: not a positive number.");
 }

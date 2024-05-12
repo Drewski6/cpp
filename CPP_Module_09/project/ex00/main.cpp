@@ -6,35 +6,51 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/12 11:12:00 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/12 13:53:51 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 #include <exception>
+#include <fstream>
 #include <iostream>
 #include <string>
 
-int main() {
+int main(int argc, char **argv) {
+  // check args
+  if (argc != 2) {
+    std::cout << "Error: Usage ./btc [inputFile]" << std::endl;
+    return (1);
+  }
+  // Open file
+  std::ifstream inputFile(argv[1]);
+  // Check that file is open
+  if (inputFile.is_open() != true) {
+    std::cout << "Error: could not open input file '" << argv[1] << "'"
+              << std::endl;
+    return (1);
+  }
+  // set database file name and init btc class
   std::string dBFileName = "./data.csv";
   BitcoinExchange btc(dBFileName);
-
+  // Import database
   try {
     btc.dBImport();
   } catch (std::exception &ex) {
     std::cout << ex.what() << std::endl;
   }
-
-  std::string strArr[] = {"2000-01-01", "2009-01-02", "2018-01-01",
-                          "2019-01-01", "2044-01-01"};
-
-  for (int i = 0; i < 5; i++) {
+  // Evaluate each line of the input file.
+  std::string line;
+  while (std::getline(inputFile, line)) {
     try {
-      std::cout << btc.valueLookup(strArr[i]) << std::endl;
+      if (line == "date | value")
+        continue;
+      std::cout << btc.evaluateOutput(line) << std::endl;
     } catch (std::exception &ex) {
       std::cout << ex.what() << std::endl;
     }
   }
-
+  // close file and return
+  inputFile.close();
   return (0);
 }
