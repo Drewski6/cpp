@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/12 19:49:56 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/05/12 19:50:04 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/05/12 19:50:07 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "PmergeMe.hpp"
 
-int main() {
-  // main
-  return (0);
-}
+// Constructors , Copy Constructor, Destructor
+PmergeMe::PmergeMe(void){};
+PmergeMe::PmergeMe(PmergeMe const &source) { *this = source; };
+PmergeMe::~PmergeMe(void){};
+
+// Overloaded Operators
+PmergeMe &PmergeMe::operator=(PmergeMe const &rhs) {
+  if (this == &rhs)
+    return (*this);
+  // Additional code here if you need a deep copy.
+  return (*this);
+};

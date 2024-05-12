@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/12 19:49:56 by dpentlan         ###   ########.fr       */
+/*   Created: 2024/05/12 19:49:57 by dpentlan          #+#    #+#             */
+/*   Updated: 2024/05/12 19:50:02 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "PmergeMe.hpp"
+#pragma once
 
-int main() {
-  // main
-  return (0);
-}
+class PmergeMe {
+public:
+  // Constructors , Copy Constructor, Destructor
+  PmergeMe(void);
+  PmergeMe(PmergeMe const &source);
+  ~PmergeMe(void);
+  
+  // Overloaded Operators
+  PmergeMe &operator=(PmergeMe const &rhs);
+
+private:
+};
