@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 18:32:17 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/12 19:22:21 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/15 14:59:07 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void BitcoinExchange::dBImport() {
     _map.erase("date,excha");
 
   dBFile.close();
-};
+}
 
 std::string BitcoinExchange::evaluateOutput(std::string &inputStr) {
   std::stringstream ss;
