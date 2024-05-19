@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 19:49:57 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/19 17:45:58 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/19 19:28:39 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ public:
   void printVector(std::string str, std::vector<int> &vec, int debug);
   void printList(std::list<int> &lst);
   void merge_insert_vec(std::vector<int> &v1, int depth);
+  void merge_insert_lst(std::list<int> &l1, int depth);
 
   // Templated Methods
   template <typename C>
@@ -86,4 +87,26 @@ private:
       int outputGroupNum, 
       int groupSize);
   void _swap_sort_vec(std::vector<int> &v1, int depth);
+  void _jacobsthal_order_lst(
+      std::list<int> &l1, 
+      std::list<int> &l2, 
+      int depth);
+  void _binary_sort_lst(
+      std::list<int> &c1, 
+      std::list<int>::iterator start, 
+      std::list<int>::iterator cpyStart, 
+      int depth, 
+      int jTIndex);
+  void _insert_group_lst(
+      std::list<int> &c1, 
+      std::list<int>::iterator start, 
+      std::list<int>::iterator cpyStart, 
+      int depth);
+  void _move_range_lst(
+      std::list<int> &c1, 
+      std::list<int> &c2, 
+      int inputGroupNum, 
+      int outputGroupNum, 
+      int groupSize);
+  void _swap_sort_lst(std::list<int> &l1, int depth);
 };
