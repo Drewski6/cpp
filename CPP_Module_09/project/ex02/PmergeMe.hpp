@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 19:49:57 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/19 20:05:42 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/20 17:43:44 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,18 @@ public:
     }
   }
 
+  template <typename C, typename MainChainIt, typename SideChainIt>
+  void _insert_group_deq(C &c1, MainChainIt start, SideChainIt cpyStart, int depth) {
+    int groupSize = 1 << depth;
+
+    int dist = std::distance(c1.begin(), start);
+
+    for (int i = 0; i < groupSize; i++) {
+      c1.insert(c1.begin() + dist, *(cpyStart - i));
+    }
+    return ;
+  }
+
   // Exception Classes
   class ParseException : public std::exception {
   public:
@@ -97,11 +109,6 @@ private:
       std::deque<int>::iterator cpyStart, 
       int depth, 
       int jTIndex);
-  void _insert_group_deq(
-      std::deque<int> &c1, 
-      std::deque<int>::iterator start, 
-      std::deque<int>::iterator cpyStart, 
-      int depth);
   void _move_range_deq(
       std::deque<int> &c1, 
       std::deque<int> &c2, 

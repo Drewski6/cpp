@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:06:08 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/20 17:18:33 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/21 19:08:13 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ int main(int argc, char **argv) {
 
   {
     // Full print of vector
-    pme.printVector("Vector", vec, 1);
-    pme.printDeque(deq);
+    // pme.printVector("Vector", vec, 1);
+    // pme.printDeque(deq);
   }
 
   return (0);

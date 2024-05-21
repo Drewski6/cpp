@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 19:50:04 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/20 17:22:24 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/21 19:07:22 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void PmergeMe::_binary_sort_vec(std::vector<int> &c1, std::vector<int>::iterator
     numGroups = (c1.end() - start) / groupSize;
 
   std::vector<int>::iterator middle = start + (groupSize - 1) + (groupSize * (numGroups / 2));
-  if (jTIndex == 0 || *middle == -1) // check for another way rather than dereferencing middle
+  if (jTIndex == 0 || *middle == -1 || numGroups == 0) // check for another way rather than dereferencing middle
     _insert_group_vec(c1, start, cpyStart, depth);
   else {
     if (*cpyStart > *middle)
@@ -203,15 +203,14 @@ void PmergeMe::_swap_sort_deq(std::deque<int> &v1, int depth) {
   return ;
 }
 
-template <typename C>
-void move_range(C &c1, C &c2, int inputGroupNum, int outputGroupNum, int groupSize) {
+void PmergeMe::_move_range_deq(std::deque<int> &c1, std::deque<int> &c2, int inputGroupNum, int outputGroupNum, int groupSize) {
 
   for (int i = 0; i < groupSize ; i++) {
     c2.push_back(-1);
   }
 
-  typename C::iterator it1 = c1.begin();
-  typename C::iterator it2 = c2.begin();
+  std::deque<int>::iterator it1 = c1.begin();
+  std::deque<int>::iterator it2 = c2.begin();
 
   std::swap_ranges(
       it1 + groupSize * inputGroupNum,
@@ -219,20 +218,7 @@ void move_range(C &c1, C &c2, int inputGroupNum, int outputGroupNum, int groupSi
       it2 + groupSize * outputGroupNum);
 }
 
-template <typename C, typename MainChainIt, typename SideChainIt>
-void insert_group(C &c1, MainChainIt start, SideChainIt cpyStart, int depth) {
-  int groupSize = 1 << depth;
-
-  int dist = std::distance(c1.begin(), start);
-
-  for (int i = 0; i < groupSize; i++) {
-    c1.insert(c1.begin() + dist, *(cpyStart - i));
-  }
-  return ;
-}
-
-template <typename C, typename MainChainIt, typename SideChainIt>
-void binary_sort(C &c1, MainChainIt start, SideChainIt cpyStart, int depth, int jTIndex) {
+void PmergeMe::_binary_sort_deq(std::deque<int> &c1, std::deque<int>::iterator start, std::deque<int>::iterator cpyStart, int depth, int jTIndex) {
   int groupSize = 1 << depth;
   int numGroups = 0;
 
@@ -242,16 +228,16 @@ void binary_sort(C &c1, MainChainIt start, SideChainIt cpyStart, int depth, int 
     numGroups = (c1.end() - start) / groupSize;
   //numGroups should be either 2^jTIndex or the actual number of groups in c1 whichever is less.
   //This causes a problem in the last return when depths == 0
-  MainChainIt middle = start + (groupSize - 1) + (groupSize * (numGroups / 2));
+  std::deque<int>::iterator middle = start + (groupSize - 1) + (groupSize * (numGroups / 2));
 
-  if (jTIndex == 0 || *middle == -1) // check for another way rather than dereferencing middle
-    insert_group(c1, start, cpyStart, depth);
+  if (jTIndex == 0 || *middle == -1 || numGroups == 0) // check for another way rather than dereferencing middle
+    _insert_group_deq(c1, start, cpyStart, depth);
   else {
     if (*cpyStart > *middle) {
-      binary_sort(c1, middle + 1, cpyStart, depth, jTIndex -1);
+      _binary_sort_deq(c1, middle + 1, cpyStart, depth, jTIndex -1);
     }
     else {
-      binary_sort(c1, start, cpyStart, depth, jTIndex -1);
+      _binary_sort_deq(c1, start, cpyStart, depth, jTIndex -1);
     }
   }
 
@@ -273,10 +259,10 @@ void PmergeMe::_jacobsthal_order_deq(std::deque<int> &v1, std::deque<int> &v2, i
       if ((bn - 1) > static_cast<int>(v2.size() / groupSize)) {
         continue;
       }
-      binary_sort(
+      _binary_sort_deq(
           v1,
           v1.begin(), // Start of v1
-          v2.begin() + (groupSize - 1) + ((bn - 2) * groupSize), // 
+          v2.begin() + (groupSize - 1) + ((bn - 2) * groupSize),
           depth, 
           jTIndex);
     }
@@ -303,7 +289,7 @@ void PmergeMe::merge_insert_deq(std::deque<int> &v1, int depth) {
   int j = 0;
   for (int i = 2; i < static_cast<int>(v1.size() / groupSize); i++) {
     if (i % 2 == 0) {
-      move_range(v1, v2, i, j, groupSize);
+      _move_range_deq(v1, v2, i, j, groupSize);
       j++;
     }
   }
