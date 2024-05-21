@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 18:32:17 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/15 14:59:07 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/21 19:21:31 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,10 @@ std::string BitcoinExchange::evaluateOutput(std::string &inputStr) {
 double BitcoinExchange::_valueLookup(std::string lookup) {
   // O(log n) time complexity
   std::map<std::string, double>::iterator it = _map.lower_bound(lookup);
+  if (it == _map.end()) {
+    it--;
+    return it->second;
+  }
   // If iterator at beginning but not equal to begin string, error
   if (it == _map.begin() && it->first != lookup)
     throw DateTooEarlyException();
