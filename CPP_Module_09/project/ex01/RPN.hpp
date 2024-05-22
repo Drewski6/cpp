@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 09:41:11 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/11 13:16:21 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/22 12:51:47 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <algorithm>
 #include <iostream>
 #include <stack>
+#include <list>
 
 class RPN {
 public:
@@ -55,6 +56,13 @@ public:
     virtual const char *what() const throw();
   };
 
+  class DivByZeroException : public std::exception {
+  public:
+    DivByZeroException();
+    virtual ~DivByZeroException() throw();
+    virtual const char *what() const throw();
+  };
+
   // Functor for VerifyNoDoubleDigitsPred
   class VerifyNoDoubleDigitsPred {
   public:
@@ -64,7 +72,7 @@ public:
 
 private:
   std::string _input;
-  std::stack<int> _stack;
+  std::stack<int, std::list<int> > _stack;
 
   void _applyOperator(char c);
 };

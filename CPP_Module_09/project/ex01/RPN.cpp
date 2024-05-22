@@ -6,7 +6,7 @@
 /*   By: dpentlan <dpentlan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 09:41:01 by dpentlan          #+#    #+#             */
-/*   Updated: 2024/05/11 13:39:58 by dpentlan         ###   ########.fr       */
+/*   Updated: 2024/05/22 11:48:11 by dpentlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,9 @@ void RPN::_applyOperator(char c) {
 
   switch(i) {
     case 0:
-      _stack.push(a / b);
+        if (b == 0)
+          throw DivByZeroException();
+        _stack.push(a / b);
       // std::cout << "pushing: " << (a / b) << std::endl;
       break;
     case 1:
@@ -127,6 +129,12 @@ RPN::NotEnoughOperatorsException::NotEnoughOperatorsException(){};
 RPN::NotEnoughOperatorsException::~NotEnoughOperatorsException() throw(){};
 const char *RPN::NotEnoughOperatorsException::what() const throw() {
   return ("Error: expression cannot be evaluated because not enough operators.");
+}
+
+RPN::DivByZeroException::DivByZeroException(){};
+RPN::DivByZeroException::~DivByZeroException() throw(){};
+const char *RPN::DivByZeroException::what() const throw() {
+  return ("Error: cannot divide by zero.");
 }
 
 RPN::VerifyNoDoubleDigitsPred::VerifyNoDoubleDigitsPred(){};
