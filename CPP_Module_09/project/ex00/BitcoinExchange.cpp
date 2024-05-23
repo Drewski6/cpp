@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-#include <algorithm>
 
 // Constructors , Copy Constructor, Destructor
 BitcoinExchange::BitcoinExchange(std::string dBFileName_val)
@@ -48,6 +47,8 @@ void BitcoinExchange::dBImport() {
     date = line.substr(0, 10);
     value_str = line.substr(11);
     value = std::strtod(value_str.c_str(), &end);
+    if (errno == ERANGE)
+      throw ValueTooLargeException();
     _map.insert(std::make_pair(date, value));
   }
 
@@ -109,13 +110,15 @@ double BitcoinExchange::_inputParse(std::string inputStr) {
   // Error checking for Value
   value_str = inputStr.substr(13);
   value = std::strtod(value_str.c_str(), &end);
-  ss << value;
-  if (ss.str() != value_str)
-    throw BadInputException(inputStr);
+  if (errno == ERANGE)
+    throw ValueTooLargeException();
   if (value < 0)
     throw ValueNotPositiveException();
   if (value > 1000)
     throw ValueTooLargeException();
+  ss << value;
+  if (ss.str() != value_str)
+    throw BadInputException(inputStr);
 
   return (value);
 };

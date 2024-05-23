@@ -18,6 +18,8 @@
 #include <map>
 #include <sstream>
 #include <string>
+#include <algorithm>
+#include <cerrno>
 
 class BitcoinExchange {
 public:
